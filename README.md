@@ -20,3 +20,5 @@ A continuación, presentamos una breve descripción de los miembros clave del eq
 -  Fernando Benavidez (Documentación y soporte): Fernando será responsable de documentar el proceso de desarrollo, mantener un registro claro de los avances y brindar soporte técnico al equipo. También se asegurará de que el código producido sea mantenible y comprensible mediante una buena documentación.
 
 ¡Con este equipo, estamos listos para enfrentar el desarrollo del e-commerce de Panda Food!
+
+## Sitios de referencia:
