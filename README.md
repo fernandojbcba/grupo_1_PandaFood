@@ -22,3 +22,4 @@ A continuación, presentamos una breve descripción de los miembros clave del eq
 ¡Con este equipo, estamos listos para enfrentar el desarrollo del e-commerce de Panda Food!
 
 ## Sitios de referencia:
+-https://glovoapp.com/es/es/
