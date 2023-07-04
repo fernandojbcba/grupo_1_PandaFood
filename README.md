@@ -27,3 +27,7 @@ A continuación, presentamos una breve descripción de los miembros clave del eq
 -https://www.reserva-restaurante-menu.es/restaurante-china-city-2-castellon-de-la-plana 
 
 - Pedidos Ya (pedidosya.com.ar): esta aplicación nos permite encontrar todo tipo de comercio, ya sean: restaurantes, almacenes, farmacias, supermercados, etc. Podemos encontrar una gran variedad de tiedas con miles de productos ajustándonos a nuestra ubicación. Tomo principalmente la parte de tomar pedidos, el pago y los envíos. También la estética y paleta de colores utilizada, ya que se ajusta bastante con la identidad de nuestra marca.
+
+- https://chifadukang.com
+Sitio perteneciente a restaurante de comida china con un diseño simple pero convincente y una paleta de colores que se ajusta a lo que queremos implementar en nuestro proyecto.
+
