@@ -29,6 +29,6 @@ A continuación, presentamos una breve descripción de los miembros clave del eq
 - https://chifadukang.com
 Sitio perteneciente a restaurante de comida china con un diseño simple pero convincente y una paleta de colores que se ajusta a lo que queremos implementar en nuestro proyecto.
 
--https://www.sushipop.com.ar/ 
+- https://www.sushipop.com.ar/ 
 Al observar su diseño limpio y su navegación intuitiva, decidí utilizarlo como referencia para nuestro proyecto. Me atrajo la forma en que presentan su contenido de manera clara y organizada, lo que brinda una experiencia agradable para los usuarios. 
 
