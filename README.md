@@ -23,7 +23,8 @@ A continuación, presentamos una breve descripción de los miembros clave del eq
 
 ## Sitios de referencia:
 
-- https://www.reserva-restaurante-menu.es/restaurante-china-city-2-castellon-de-la-plana 
+- https://www.reserva-restaurante-menu.es/restaurante-china-city-2-castellon-de-la-plana
+  Un sitio el cual nos ofrece mucha información como menú, ubicación, reseñas, reservas, devilery. Me parece que podemos inspirarnos de este sitio gracias a las funciones que ofrece.
 
 - Pedidos Ya (pedidosya.com.ar): esta aplicación nos permite encontrar todo tipo de comercio, ya sean: restaurantes, almacenes, farmacias, supermercados, etc. Podemos encontrar una gran variedad de tiedas con miles de productos ajustándonos a nuestra ubicación. Tomo principalmente la parte de tomar pedidos, el pago y los envíos. También la estética y paleta de colores utilizada, ya que se ajusta bastante con la identidad de nuestra marca.
 
