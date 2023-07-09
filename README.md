@@ -22,7 +22,8 @@ A continuación, presentamos una breve descripción de los miembros clave del eq
 ¡Con este equipo, estamos listos para enfrentar el desarrollo del e-commerce de Panda Food!
 
 ## Sitios de referencia:
--https://www.reserva-restaurante-menu.es/restaurante-china-city-2-castellon-de-la-plana 
+
+- https://www.reserva-restaurante-menu.es/restaurante-china-city-2-castellon-de-la-plana 
 
 - Pedidos Ya (pedidosya.com.ar): esta aplicación nos permite encontrar todo tipo de comercio, ya sean: restaurantes, almacenes, farmacias, supermercados, etc. Podemos encontrar una gran variedad de tiedas con miles de productos ajustándonos a nuestra ubicación. Tomo principalmente la parte de tomar pedidos, el pago y los envíos. También la estética y paleta de colores utilizada, ya que se ajusta bastante con la identidad de nuestra marca.
 
@@ -31,4 +32,14 @@ Sitio perteneciente a restaurante de comida china con un diseño simple pero con
 
 - https://www.sushipop.com.ar/ 
 Al observar su diseño limpio y su navegación intuitiva, decidí utilizarlo como referencia para nuestro proyecto. Me atrajo la forma en que presentan su contenido de manera clara y organizada, lo que brinda una experiencia agradable para los usuarios. 
+- https://www.shanghaiinnchicago.com
+  tomamos como referencia tambien este sitio, ya que tambien comercializan comidas china. apunta a comercializar comida para todos los rangos de edad. la estetica del sitio esta bien organizada, pero para nuestro gusto preferimos paginas que sean SPA para no tener que estar haciendo mucho scroll en la pagina ya que se pierden foco a los productos. Tiene un carrito de ordenes bastante pratico.
 
+
+### Wireframe de las siguientes páginas: realizado en figma.
+○ Home
+○ Detalle de producto
+○ Carrito de compras
+○ Formulario de registro
+○ Formulario de login
+link: https://www.figma.com/file/xx4sPYLzF7czldNqa6Agjo/panda-food?type=design&node-id=75%3A135&mode=design&t=HTItFtwZ3TyezFOh-1
