@@ -38,9 +38,12 @@ Al observar su diseño limpio y su navegación intuitiva, decidí utilizarlo com
 
 
 ### Wireframe de las siguientes páginas: realizado en figma.
-○ Home
-○ Detalle de producto
-○ Carrito de compras
-○ Formulario de registro
-○ Formulario de login
+- ○ Home
+- ○ Detalle de producto
+- ○ Carrito de compras
+- ○ Formulario de registro
+- ○ Formulario de login
 link: https://www.figma.com/file/xx4sPYLzF7czldNqa6Agjo/panda-food?type=design&node-id=75%3A135&mode=design&t=HTItFtwZ3TyezFOh-1
+
+### trello
+https://trello.com/b/eGf1pB42/pandafood
