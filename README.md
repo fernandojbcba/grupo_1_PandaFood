@@ -43,6 +43,8 @@ Al observar su diseño limpio y su navegación intuitiva, decidí utilizarlo com
 - ○ Carrito de compras
 - ○ Formulario de registro
 - ○ Formulario de login
+
+
 link: https://www.figma.com/file/xx4sPYLzF7czldNqa6Agjo/panda-food?type=design&node-id=75%3A135&mode=design&t=HTItFtwZ3TyezFOh-1
 
 ### trello
