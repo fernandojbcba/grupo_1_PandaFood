@@ -1,15 +1,15 @@
 .header {
   display: flex;
   align-items: center;
-  height: 80px;
+  height: 100px;
   background-color: var(--rojo);
   color: #eeeee6;
   justify-content: space-between;
-  left: 20px;
+  left: 5px;
   overflow: visible;
   position: fixed;
-  right: 20px;
-  top: 25px;
+  right: 5px;
+  top: 5px;
 }
 
 .logo {
@@ -24,7 +24,7 @@
   z-index: 10;
   background-size: 130px 130px;
   position: absolute;
-  top: -28px;
+  top: -6px;
   left: 30px;
   height: 130px;
   overflow: visible;
