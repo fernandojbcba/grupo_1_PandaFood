@@ -2,6 +2,11 @@
   font-family: "ABeeZee", sans-serif;
   font-family: "Montserrat", sans-serif;
   font-family: "Nanum Gothic Coding", monospace;
+
+
+/* colores */
+--rojo:#d1282e;
+
 }
 body {
   margin: 0;

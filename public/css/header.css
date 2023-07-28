@@ -1,77 +1,91 @@
-
 .header {
-    display: flex;
-    align-items: center;
-    height: 80px;
-    background-color: red;
-    color: white;
-    justify-content: space-between;
-    left: 20px;
-overflow: visible;
-position: fixed;
-right: 20px;
-top: 25px;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  background-color: var(--rojo);
+  color: #eeeee6;
+  justify-content: space-between;
+  left: 20px;
+  overflow: visible;
+  position: fixed;
+  right: 20px;
+  top: 25px;
 }
 
 .logo {
-    display: flex;
-width: 250px;
+  display: flex;
+  width: 250px;
 }
-.logo_i{
+.logo_i {
   background-image: url("/img/logo1.svg");
-
-text-indent: 100%;
-white-space: nowrap;
-filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.2));
-z-index: 10;  
-background-size: 130px 130px;
-position: absolute;
-top: -28px;
-left: 30px;
-height: 130px;
-overflow: visible;
-width: 130px;
+  text-indent: 100%;
+  white-space: nowrap;
+  filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.2));
+  z-index: 10;
+  background-size: 130px 130px;
+  position: absolute;
+  top: -28px;
+  left: 30px;
+  height: 130px;
+  overflow: visible;
+  width: 130px;
 }
-
 
 .search {
-   display:flex;
-    padding: 0 20px;
+  display: flex;
+  padding: 0 20px;
 }
 
 .search input {
-    width: 100%;
-    padding: 8px;
-    font-size: 16px;
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
 }
 
 .menu {
-    flex: 1;
-    text-align: right;
-    padding-right: 20px;
+  flex: 1;
+  text-align: right;
+  padding-right: 20px;
 }
 
 .menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .menu li {
-    display: inline-block;
-    margin-left: 15px;
+  display: inline-block;
+  margin-left: 15px;
 }
 
 .menu li:first-child {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 .menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
+  
+  display: block;
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+  line-height: 70px;
+  padding: 0 23px;
+  font-size: 18px ;
+  font-family: "Montserrat";
+}
+.menu a::before{
+  content: "";
+position: absolute;
+top: 50%;
+left: 100%;
+transform: translate(-50%,-50%);
+height: 16px;
+width: 2px;
+background: #000;  
 }
 
 .menu a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
