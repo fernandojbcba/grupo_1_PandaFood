@@ -1,0 +1,135 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+:root {
+    --font-family: "Raleway", sans-serif;
+  
+    --primary-color: #2A7AE4;
+    --secundary-color: #FFFFFF;
+    --input-search-color: #B5B2B2;
+    --contrast-dark-color: #424242;
+    --light-background-color: #F5F5F5;
+  }
+  
+  body {
+    background-color: var(--secundary-color);
+    color: var(--contrast-dark-color);
+    font-family: var(--font-family);
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
+.header__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    background: #FFFFFF;
+    /* background-image: url(../img/pandacocinando.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+
+}
+
+
+.header__container__logo {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    padding-left: 0.5rem;
+    width: 30%;
+}
+
+.header__logo {
+    width: 100px;
+    height: 28px;
+}
+
+
+
+
+.header__container__search {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    width: 25%;
+    height: 100%;
+}
+
+.header__search{
+    display: flex;
+}
+
+.header__search__input {
+    width: 80%;
+    background: var(--input-search-color);
+    border: none;
+    border-radius: 25px;
+    outline: none;
+
+}
+
+.header__search__input:focus{
+    border: none;
+}
+
+.header__search__btn i{
+    font-size: 16px;
+    justify-self: flex-end;
+}
+.header__search__btn {
+    color: var(--contrast-dark-color);
+    font-size: 9px;
+    border: none;
+    justify-self: flex-end;
+}
+.header_container_nav{
+    width: 30vh;
+}
+.header_container_nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+.header_container_nav ul li{
+   padding-left: 20px;
+}
+
+.header_container_nav ul li a{
+    text-decoration:none;
+ }
+
+
+
+@media screen and (min-width:768px) {
+    .header__container {
+      
+    }
+    .header__container__logo {
+        width: fit-content;
+    }
+    .header__container__search{
+        width: 40%;
+    }
+
+      .header__search {
+        align-items: center;
+        padding-left: 2rem;
+    }
+    .header__search__input{
+        border-radius: 25px 0 0 25px;
+        height: 21px;
+    }
+    .header__search__btn i {
+        background: var(--input-search-color);
+        border-radius: 0 25px 25px 0;
+        padding-right: 1rem;
+        font-size: 21px
+    }
+   
+}
