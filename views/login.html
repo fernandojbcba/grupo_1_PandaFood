@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PandaFood🐼</title>
+    <title>Iniciar sesión</title>
     <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/main.css" />
@@ -45,9 +45,36 @@
     <main>
       <div class="contenedor-login">
         <div class="contenedor-login-titulo">
-          <h1>login</h1>
         </div>
       </div>
+      <div class="container">
+        <h2>Iniciar Sesión</h2>
+        <div class="redes-login">
+            <button class="google">Iniciar sesión con Google</button>
+            <button class="facebook">Iniciar sesión con Facebook</button>
+        </div>
+        <form>
+          <label for="username">o utilizando tu email:</label>
+          <input type="text" id="username" name="username" placeholder="ejemplo@email.com" required>
+
+          <label for="password"></label>
+          <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
+          <div class="recordar-contraseña">
+              <input type="checkbox" id="remember" name="remember">
+              <label for="remember">Recordar contraseña</label>
+          </div>
+
+          <button type="submit">Ingresar</button>
+      </form>
+      <div class="olvidaste-contraseña">
+        <a href="#">¿Olvidaste tu contraseña?</a>
+    </div>
+
+    <div class="signup">
+        <p>¿No tienes cuenta? <a href="#">Regístrate</a></p>
+    </div>
+</div>
+
     </main>
     <footer></footer>
   </body>
