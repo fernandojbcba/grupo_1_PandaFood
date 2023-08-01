@@ -1,5 +1,48 @@
+/* {
+    margin: 0px;
+    padding: 0px; 
+    box-sizing: border-box;
+}*/
+
 .contenedor-registro{
-  
     margin: 0 auto;
     padding: 105px 5px 130px 5px;
+}
+
+.registro-contenedor {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.fomulario {
+    background-color: rgba(170, 168, 168, 0.562);
+    padding: 30px;
+}
+
+.label-registro {
+    display: flex;
+    font-size: 20px;
+}
+
+.input-registro {
+    padding-left: 180px;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+.checkbox {
+    display: flex;
+
+}
+
+
+.enviar {
+    display: flex;
+    margin: 0 auto;
+
+}
+
+h5 {
+    display: flex;
 }
