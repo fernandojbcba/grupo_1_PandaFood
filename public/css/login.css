@@ -49,3 +49,34 @@
   }
 
 
+.recordar-contraseña{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.recordar-contraseña label{
+  margin-left: 5px;
+}
+
+
+.redes-login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+
+button.google, button.facebook {
+  margin-bottom: 10px; 
+}
+
+.olvidaste-contraseña {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.signup {
+  text-align: center;
+}
