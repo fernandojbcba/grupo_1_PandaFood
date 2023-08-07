@@ -6,8 +6,8 @@
     }
 
   .container{
-    max-width: 350px;
-    margin: 100px auto;
+    width: 380px;
+    margin: -150px auto 80px auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;

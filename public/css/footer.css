@@ -1,0 +1,38 @@
+footer{
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+}
+
+.logo{
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+    
+}
+
+.menu{
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+  
+.menu li{
+    margin-right: 20px;
+}
+
+.menu li a {
+    color: #333;
+    font-size: 16px;
+  }
+
+ .menu li :hover{
+    color: #d1282e;
+ } 
+
+.copyright {
+    color: #666;
+    font-size: 18px;
+    margin-top: 10px;
+} 
