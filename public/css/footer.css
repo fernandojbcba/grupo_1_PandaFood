@@ -4,34 +4,39 @@ footer{
     padding: 20px;
 }
 
-.logo{
+.logof{
     width: 200px;
     display: block;
     margin: 0 auto;
     
 }
 
-.menu{
+.menuf{
     padding: 0;
     margin: 10px 0;
     display: flex;
     justify-content: center;
+    list-style: none;
 }
   
-.menu li{
+.menuf li{
     margin-right: 20px;
 }
 
-.menu li a {
+.menuf li a {
     color: #333;
     font-size: 16px;
-  }
+        font-weight: 700;
+        text-decoration: none;
+        font-family: "Montserrat";
+      }
+  
 
- .menu li :hover{
+ .menuf li :hover{
     color: #d1282e;
  } 
 
-.copyright {
+.copyrightf {
     color: #666;
     font-size: 18px;
     margin-top: 10px;

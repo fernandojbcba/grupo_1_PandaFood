@@ -33,7 +33,7 @@
             <li><a href="/login">Login</a></li>
             <li><a href="/registro">Registro</a></li>
             <li><a href="/carrito">Carrito</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="/detalle">Detalle</a></li>
           </ul>
         </nav>
       </div>
@@ -46,42 +46,43 @@
       <div class="contenedor-registro">
         <div class="contenedor-registro-titulo">
           <h1>registro</h1>
+          <section class="registro-contenedor">
+            <form action="" class="fomulario">
+              <label class="label-registro" for="nombreCompleto">Nombre y Apellido </label>
+              <input class="input-registro" type="text">
+              <label class="label-registro" for="mail">Mail</label>
+              <input class="input-registro" type="email">
+              <label class="label-registro" for="contraseña">Contraseña</label>
+              <input class="input-registro" type="password">
+            
+                <input class="checkbox" type="checkbox"name="recordar" value="">
+                <label class="check" for="check">Recordar</label>
+              
+              <button class="enviar" type="submit">Enviar</button>
+              <h5>¿Ya tienes una cuenta? <a href="/login"><u>Ingresar</u></a></h5>
+            </form>
+            
+          </section>
         </div>
       </div>
     </main>
-    <section class="registro-contenedor">
-      <form action="" class="fomulario">
-        <label class="label-registro" for="nombreCompleto">Nombre y Apellido </label>
-        <input class="input-registro" type="text">
-        <label class="label-registro" for="mail">Mail</label>
-        <input class="input-registro" type="email">
-        <label class="label-registro" for="contraseña">Contraseña</label>
-        <input class="input-registro" type="password">
-      
-          <input class="checkbox" type="checkbox"name="recordar" value="">
-          <label class="check" for="check">Recordar</label>
-        
-        <button class="enviar" type="submit">Enviar</button>
-        <h5>¿Ya tienes una cuenta? <a href="/login"><u>Ingresar</u></a></h5>
-      </form>
-      
-    </section>
+    
     <footer> 
       <div class="izquierda">
-      <img src="/img/logo-PandaFood.svg" alt="logo" class="logo">
+      <img src="/img/logo-PandaFood.svg" alt="logo" class="logof">
       </div>
       <div class="centro">
-        <ul class="menu">
+        <ul class="menuf">
           <li><a href="">Tu perfil</a></li>
           <li><a href="">Preguntas frecuentes</a></li>
           <li><a href="">Locales</a></li>
           <li><a href="">Reclamos</a></li>
         </ul>
         </div>
-        <div class="copyright">
+        <div class="copyrightf">
           © 2023 Panda Food - Todos los derechos reservados
         </div>
-      </div></footer>
+      </footer>
   </body>
   <script
     src="https://kit.fontawesome.com/32e1b61c65.js"
