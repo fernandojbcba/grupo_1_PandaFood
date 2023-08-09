@@ -1,10 +1,16 @@
+
 .carrito-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
     background-color: #f2f2f2e3;
     padding: 20px;
     border: 1px solid #ddd;
     margin-top: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    padding: 105px 5px 130px 5px;
   }
   
   .carrito-items {

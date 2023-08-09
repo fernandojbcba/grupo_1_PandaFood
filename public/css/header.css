@@ -7,7 +7,7 @@
   justify-content: space-between;
   left: 5px;
   overflow: visible;
-  
+  position: fixed;
   right: 5px;
   top: 5px;
 }
