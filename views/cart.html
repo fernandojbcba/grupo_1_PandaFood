@@ -1,106 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PandaFood🐼</title>
-    <link rel="stylesheet" href="/css/base.css" />
-    <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Montserrat:wght@400;500;700&family=Nanum+Gothic+Coding:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="header">
-      <div class="logo">
-        <a
-          class="logo_i"
-          href="/"
-          aria-label="Panda Food, Click to go home."
-        ></a>
-      </div>
-      <div class="header_nav">
-        <nav class="menu">
-          <ul>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/registro">Registro</a></li>
-            <li><a href="/carrito">Carrito</a></li>
-            <li><a href="/detalle">Detalle</a></li>
-          </ul>
-        </nav>
-      </div>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PandaFood🐼</title>
+<link rel="stylesheet" href="/css/base.css" />
+<link rel="stylesheet" href="/css/header.css" />
+<link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+<header class="header">
+  <div class="logo">
+    <a
+      class="logo_i"
+      href="/"
+      aria-label="Panda Food, Click to go home."
+    ></a>
+  </div>
+  <div class="header_nav">
+    <nav class="menu">
+      <ul>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/registro">Registro</a></li>
+        <li><a href="/carrito">Carrito</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
 
-      <div class="search">
-        <input type="text" placeholder="Buscar..." />
-      </div>
-    </header>
-    <main>
-      <div class="contenedor-carrito">
-        <h1>Carrito de Compras</h1>
-        <div style="text-align: center" ; id="items">
-          <div class="item">
-            <h2>Producto 1</h2>
-            <p>Precio: $10.00</p>
-            <button
-              class="add-to-cart"
-              onclick="agregarCarrito('Producto 1', 10.00)"
-            >
-              Agregar al carrito
-            </button>
-          </div>
-          <div class="item">
-            <h2>Producto 2</h2>
-            <p>Precio: $15.00</p>
-            <button
-              class="add-to-cart"
-              onclick="agregarCarrito('Producto 2', 15.00)"
-            >
-              Agregar al carrito
-            </button>
-            <div class="item">
-              <h2>Producto 3</h2>
-              <p>Precio: $5.00</p>
-              <button
-                class="add-to-cart"
-                onclick="agregarCarrito('Producto 2', 15.00)"
-              >
-                Agregar al carrito
-              </button>
-            </div>
-            <h2>Total: $<span id="total">25.00</span></h2>
-            <h3>Continuar con la compra</h3>
-          </div>
-        </div>
-      </div>
-    </main>
+  <div class="search">
+    <input type="text" placeholder="Buscar..." />
+  </div>
+</header>
 
-    <footer>
-      <div class="izquierda">
-        <img src="/img/logo-PandaFood.svg" alt="logo" class="logof" />
+<div class="carrito-section">
+  <h1>Carrito de Compras</h1>
+  <div class="carrito-items" id="items">
+    <div class="producto"> 
+    <div class="item">
+      <h2>Producto 1</h2>
+      <p>Precio: $10.00</p>
+      <button class="add-to-cart" onclick="agregarCarrito('Producto 1', 10.00)">Agregar al carrito</button>
+    </div>
+    </div>
+    
+  <div class="item">
+  <div class="producto"> 
+      <h2>Producto 2</h2>
+      <p>Precio: $15.00</p>
+      <button class="add-to-cart" onclick="agregarCarrito('Producto 2', 15.00)">Agregar al carrito</button>
+    </div>
+    <div class="item">
+    <div class="producto">
+      <h2>Producto 3</h2>
+      <p>Precio: $5.00</p>
+      <button class="add-to-cart" onclick="agregarCarrito('Producto 3', 5.00)">Agregar al carrito</button>
+    </div>
+  </div>
+  <h2 class="total-caja">Total: $<span id="total">30.00</span></h2>
+  <h3 style="text-align: right;">Continuar con la compra</h3>
+  </div>
+
+<footer>
+  <div class="izquierda">
+    <img src="/img/logo-PandaFood.svg" alt="logo" class="logo">
+    </div>
+    <div class="centro">
+      <ul class="menu">
+        <li><a href="">Tu perfil</a></li>
+        <li><a href="">Preguntas frecuentes</a></li>
+        <li><a href="">Locales</a></li>
+        <li><a href="">Reclamos</a></li>
+      </ul>
       </div>
-      <div class="centro">
-        <ul class="menuf">
-          <li><a href="">Tu perfil</a></li>
-          <li><a href="">Preguntas frecuentes</a></li>
-          <li><a href="">Locales</a></li>
-          <li><a href="">Reclamos</a></li>
-        </ul>
-      </div>
-      <div class="copyrightf">
+      <div class="copyright">
         © 2023 Panda Food - Todos los derechos reservados
       </div>
-    </footer>
-  </body>
-  <script
-    src="https://kit.fontawesome.com/32e1b61c65.js"
-    crossorigin="anonymous"
-  ></script>
+</footer>
+</body>
 </html>
