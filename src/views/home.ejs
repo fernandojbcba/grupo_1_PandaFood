@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include("partials/head") %>
+  <body>
+    <%- include("partials/header") %>
+
+    <main>
+      <div class="contenedor-home">
+        <div class="contenedor-home-oferta">
+          <div class="oferta-div">
+            <h2>Que menu comemos hoy???</h2>
+            <h3>Aprovecha las Promos</h3>
+          </div>
+        </div>
+        <div class="contenedor-home-titulo">
+          <h1>MENU</h1>
+        </div>
+
+        <div class="contenedor-home-productos">
+          <%menu.forEach(plato => {%>
+          <div class="contedor-home-productos-producto">
+            <img
+              class="producto-imagen"
+              src="/img/productos/<%=plato.image%>"
+              alt="Descripción de la imagen"
+            />
+            <div class="producto-descripcion">
+              <h2><%=plato.title.toUpperCase()%></h2>
+               <div class="producto-descripcion-div">
+               
+                <p><%=plato.description%></p>
+               </div> 
+                <h3>$<%=plato.price%></h3>
+            </div>
+            
+          </div>
+          <%})%>;
+        </div>
+      </div>
+    </main>
+
+    <%- include("partials/footer") %>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/32e1b61c65.js"
+    crossorigin="anonymous"
+  ></script>
+</html>
