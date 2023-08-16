@@ -44,17 +44,19 @@
     </header>
     <main class="main">
 
-<div class="a"><img src="/img/productos/FRIED-RICE.jpg" alt="Detalle del Producto" class="producto-imagen"></div>
+
       
 
 <div class="producto-detalle">
-        <h2 class="nombre">Nombre del Producto</h2>
+  
+    <div class="a"><img src="/img/productos/<%=menu.image%>" alt="Detalle del Producto" class="producto-imagen"></div>
+        <h2 class="nombre"><%=menu.title%>"</h2>
         <div class="producto-info">
             
-            <p class="descripcion">Descripción del plato: Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            <p class="descripcion"><%=menu.description%>"</p>
         </div>
         <div class="acciones">
-            <p class="precio">$3,600</p>
+            <p class="precio"><%=menu.price%>"</p>
             <div class="rating">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -66,6 +68,7 @@
             <button class="reseñas">Ver Reseñas</button>
             <button class="home">Home</button>
         </div>
+        
     </div>
 
 

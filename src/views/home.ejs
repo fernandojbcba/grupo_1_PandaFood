@@ -18,7 +18,7 @@
 
         <div class="contenedor-home-productos">
           <%menu.forEach(plato => {%>
-          <div class="contedor-home-productos-producto">
+          <div class="contedor-home-productos-producto" onclick="window.location.href = `/detalle/<%=plato.id%>`">
             <img
               class="producto-imagen"
               src="/img/productos/<%=plato.image%>"
