@@ -3,8 +3,6 @@ const app = express();
 const path = require('path');
 const mainRouter =require ('./routes')
 const publicPath = path.join(__dirname, '../public'); //Hacer publicos los archivos de la carpeta public
-const loginRouter = require('./routes/loginRouter');
-const registroRouter= require("./routes/registroRouter");
 app.use(express.static(publicPath));
 
 
@@ -18,5 +16,3 @@ app.listen(process.env.PORT || 3010, function() {
 
 
 app.use('/',mainRouter)
-app.use('/login', loginRouter);
-app.use("/registro", registroRouter);
