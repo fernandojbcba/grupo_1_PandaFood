@@ -1,47 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Iniciar sesión</title>
-    <link rel="stylesheet" href="/css/base.css" />
-    <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Montserrat:wght@400;500;700&family=Nanum+Gothic+Coding:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+<html lang="es">
+  <%- include("../partials/head") %>
   <body>
-    <header class="header">
-      <div class="logo">
-        <a
-          class="logo_i"
-          href="/"
-          aria-label="Panda Food, Click to go home."
-        ></a>
-      </div>
-      <div class="header_nav">
-        <nav class="menu">
-          <ul>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/registro">Registro</a></li>
-            <li><a href="/carrito">Carrito</a></li>
-            <li><a href="/detalle">Detalle</a></li>
-          </ul>
-        </nav>
-      </div>
-
-      <div class="search">
-        <input type="text" placeholder="Buscar..." />
-      </div>
-    </header>
+    <%- include("../partials/header") %>
     <main>
         <div class="carrito-section">
             <h1>  Actualizar Menu N° <%= menu.id %> </h1>
@@ -60,22 +21,7 @@
         </div>
     </main>
 
-    <footer>
-        <div class="izquierda">
-          <img src="/img/logo-PandaFood.svg" alt="logo" class="logof" />
-        </div>
-        <div class="centro">
-          <ul class="menuf">
-            <li><a href="">Tu perfil</a></li>
-            <li><a href="">Preguntas frecuentes</a></li>
-            <li><a href="">Locales</a></li>
-            <li><a href="">Reclamos</a></li>
-          </ul>
-        </div>
-        <div class="copyrightf">
-          © 2023 Panda Food - Todos los derechos reservados
-        </div>
-      </footer>
+    <%- include("../partials/footer") %>
 </body>
 
 </html>
