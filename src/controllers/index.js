@@ -1,4 +1,6 @@
 const path = require("path");
+const fs = require ("fs");
+
 const menus = [
   {
     id: 1,
@@ -147,6 +149,6 @@ const controller = {
   },
   cart: (req,res)=>{
     res.render('./products/cart')
-    },
+    }
 };
 module.exports = controller;
