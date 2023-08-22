@@ -8,10 +8,9 @@ router.get('/login', productController.login);
 router.get('/registro', productController.registro);
 router.get('/carrito', productController.cart);
 router.get('/admin/create', productController.create);
-//router.get('/edit/:id', productController.edit);
+router.get('/admin/edit/:id', productController.edit);
 
 router.post('/admin/create', productController.createProcess);
-//router.put('/edit-process/:id', productController.update);
-
+router.put('/admin/edit-process/:id', productController.update);
 
 module.exports = router

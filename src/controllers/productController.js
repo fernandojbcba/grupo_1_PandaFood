@@ -1,3 +1,4 @@
+const { log } = require('console');
 const fs = require('fs');
 const path = require('path');
 
@@ -30,7 +31,6 @@ const productController = {
     res.render('./products/creacion')
   },
   createProcess: (req, res) => {
-    console.log(req.body);
     let newMenu = {
       id: products.length + 1,
       title: req.body.titulo,
@@ -41,6 +41,24 @@ const productController = {
 
     products.push(newMenu);
 
+    writeFileJSON(products);
+
+    res.redirect('/')
+  },
+  edit: (req, res) => {
+    let menuEncontrado = products.find((menu) => menu.id == req.params.id);
+
+    res.render('./products/edicion', { menu: menuEncontrado  });
+  },
+  update: (req, res) => {
+    //obtendo el producto
+    let menuEncontrado = products.find((menu) => menu.id == req.params.id);
+    //actualizo el producto
+    menuEncontrado.title = req.body.titulo;
+    menuEncontrado.category = req.body.categoria;
+    menuEncontrado.description = req.body.descripcion;
+    menuEncontrado.price = req.body.precio;
+    //actualizo la DB
     writeFileJSON(products);
 
     res.redirect('/')
