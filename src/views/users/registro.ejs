@@ -5,27 +5,40 @@
     <%- include("../partials/header") %>
     <main>
       <div class="contenedor-registro">
-        <div class="contenedor-registro-titulo">
-          <h1>registro</h1>
-          <section class="registro-contenedor">
-            <form action="" class="fomulario">
-              <label class="label-registro" for="nombreCompleto">Nombre y Apellido </label>
-              <input class="input-registro" type="text">
-              <label class="label-registro" for="mail">Mail</label>
-              <input class="input-registro" type="email">
-              <label class="label-registro" for="contraseña">Contraseña</label>
-              <input class="input-registro" type="password">
+        <div class="container-r">
+          <h2>Registro</h2>
+          <div class="redes-registro">
+            <button class="google">Registrarse con Google</button>
+            <button class="facebook">Registrarse con Facebook</button>
+          </div>
+          <form>
+            <label for="nombreCompleto">Nombre y Apellido:</label>
+            <input type="text" id="nombreCompleto" name="nombreCompleto" placeholder="Nombre Apellido" required>
             
-                <input class="checkbox" type="checkbox"name="recordar" value="">
-                <label class="check" for="check">Recordar</label>
-              
-              <button class="enviar" type="submit">Enviar</button>
-              <h5>¿Ya tienes una cuenta? <a href="/login"><u>Ingresar</u></a></h5>
-            </form>
+            <label for="mail">Mail:</label>
+            <input type="email" id="mail" name="mail" placeholder="ejemplo@email.com" required>
             
-          </section>
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese su contraseña" required>
+            
+            <div class="recordar-contraseña">
+              <input type="checkbox" id="recordar" name="recordar">
+              <label for="recordar">Recordar contraseña</label>
+            </div>
+            
+            <button type="submit">Registrarse</button>
+          </form>
+          
+          <div class="olvidaste-contraseña">
+            <a href="#">¿Olvidaste tu contraseña?</a>
+          </div>
+          
+          <div class="signup">
+            <p>¿Ya tienes cuenta? <a href="/login">Ingresar</a></p>
+          </div>
         </div>
       </div>
+      
     </main>
     
     <%- include("../partials/footer") %>

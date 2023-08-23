@@ -1,51 +1,90 @@
 /* {
     margin: 0px;
     padding: 0px; 
-    box-sizing: border-box;
+  box-sizing: border-box;
 }*/
 
-.contenedor-registro{
-    margin: 0 auto;
+
+
+.contenedor-registro {
+    padding-top: 150px;
+    margin-left: auto ;
+    margin-right: auto;
     display: flex;
     text-align: center;
     justify-content: center;
-    padding: 105px 5px 130px 5px;
+    
 }
+  
+.container-r {
+    width: 380px;
+    margin: 0px auto 80px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
-.registro-contenedor {
-    display: flex;
+  }
+  
+  h2 {
     text-align: center;
-    justify-content: center;
-}
-
-.fomulario {
-    background-color: rgba(170, 168, 168, 0.562);
-    padding: 30px;
-}
-
-.label-registro {
+    margin-bottom: 20px;
+  }
+  
+  form {
     display: flex;
-    font-size: 20px;
-}
-
-.input-registro {
-    padding-left: 180px;
-    font-size: 20px;
+    flex-direction: column;
+  }
+  
+  label {
+    align-self: center;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  button {
+    background-color: #d1282e;
+    color: #fff;
+    padding: 10px;
+    border: none;
     border-radius: 8px;
-}
-
-.checkbox {
+    cursor: pointer;
+  }
+  
+  .recordar-contraseña {
     display: flex;
-
-}
-
-
-.enviar {
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .recordar-contraseña label {
+    margin-left: 5px;
+    font-size: 14px;
+  }
+  
+  .redes-registro {
     display: flex;
-    margin: 0 auto;
-
-}
-
-h5 {
-    display: flex;
-}
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  button.google,
+  button.facebook {
+    margin-bottom: 10px;
+  }
+  
+  .olvidaste-contraseña {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .signup {
+    text-align: center;
+  }
