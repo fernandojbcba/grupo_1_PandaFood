@@ -4,7 +4,7 @@ const path = require('path');
 const methodOverride = require("method-override");
 
 //const mainRouter =require ('./routes')
-const productRouter = require('./routes/index');
+const Router = require('./routes/indexRouter');
 
 const publicPath = path.join(__dirname, '../public'); //Hacer publicos los archivos de la carpeta public
 app.use(express.static(publicPath));
@@ -21,5 +21,5 @@ app.listen(process.env.PORT || 3010, function() {
 });
 
 
-app.use('/', productRouter);
+app.use('/', Router);
 
