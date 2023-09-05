@@ -21,7 +21,8 @@ const productController = {
     res.render('./products/cart')
   },
   home: (req, res) => {
-    res.render("home", { menu: products });
+    let menuFiltrado = products.filter((menu) => menu.borrado == false);
+    res.render("home", { menu: menuFiltrado });
   },
   detalle: (req, res) => {
     let menuEncontrado = products.find((menu) => menu.id == req.params.id);
@@ -37,6 +38,8 @@ const productController = {
       category: req.body.categoria,
       description: req.body.descripcion,
       price: req.body.precio,
+      borrado: false,
+      image: req.file ? req.file.filename : "menu-predeterminado.jpg"
     }
 
     products.push(newMenu);
@@ -58,6 +61,34 @@ const productController = {
     menuEncontrado.category = req.body.categoria;
     menuEncontrado.description = req.body.descripcion;
     menuEncontrado.price = req.body.precio;
+    //actualizo la DB
+    writeFileJSON(products);
+
+    res.redirect('/')
+  },
+  destroy: (req, res) => {
+    let menuEncontrado = products.find((menu) => menu.id == req.params.id);
+    //actualizo el producto
+    menuEncontrado.borrado = true;
+   
+    //actualizo la DB
+    writeFileJSON(products);
+
+    res.redirect('/')
+
+    // let menuIndexEncontrado = products.find((menu) => menu.id == req.params.id);
+    // // modificar el array
+    // products.splice(menuIndexEncontrado, 1);
+    
+    // writeFileJSON(products);
+
+    // res.redirect('/')
+  },
+  recuperarProcess: (req, res) => {
+    let menuEncontrado = products.find((menu) => menu.id == req.params.id);
+    //actualizo el producto
+    menuEncontrado.borrado = false;
+   
     //actualizo la DB
     writeFileJSON(products);
 

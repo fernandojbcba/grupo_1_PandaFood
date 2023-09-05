@@ -14,9 +14,16 @@
                     <input type="number" name="precio" placeholder="Precio" value="<%= menu.price %>">
                     <button type="submit">Editar</button>
                 </form>
-                <!-- <form action="/admin/delete/<%= menu.id %>?_method=DELETE" method="post">
+                <br>
+                <% if (menu.borrado == false) {  %>
+                <form action="/delete/<%= menu.id %>?_method=DELETE" method="post">
                   <button>Borrar</button>
-                </form> -->
+                </form>
+                <% } else { %>
+                <form action="/altaMenu/<%= menu.id %>?_method=put" method="post">
+                    <button>Alta Menu</button>
+                </form>
+                <% } %>
             </div>
         </div>
     </main>
