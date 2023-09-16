@@ -1,69 +1,101 @@
-[{"id":1,
-"firstName":"in magna",
-"lastName":"libero nam",
-"email":"fbenez0@walmart.com",
-"password":"fV1\\*Qo8r6'#!P",
-"type":"Admin"},
-
-{"id":2,
-"firstName":"parturient montes",
-"lastName":"purus phasellus",
-"email":"cmassard1@sina.com.cn",
-"password":"kD2/FS\"v",
-"type":"Customer"},
-
-{"id":3,
-"firstName":"arcu sed",
-"lastName":"in",
-"email":"hdaal2@storify.com",
-"password":"gY6'*IB?a\"<=.",
-"type":"Customer"},
-
-{"id":4,
-"firstName":"mi in",
-"lastName":"justo",
-"email":"lgolding3@ycombinator.com",
-"password":"hW7!aP@548ka",
-"type":"Admin"},
-
-{"id":5,
-"firstName":"vitae",
-"lastName":"sapien non",
-"email":"wjakubski4@shutterfly.com",
-"password":"xL0\"DrgkDib",
-"type":"Customer"},
-
-{"id":6,
-"firstName":"quis turpis",
-"lastName":"eu nibh",
-"email":"cleades5@hibu.com",
-"password":"xL1{g&FiERxj>xI",
-"type":"Admin"},
-
-{"id":7,
-"firstName":"ut",
-"lastName":"vel",
-"email":"ereadmire6@photobucket.com",
-"password":"zC4@2qe6AzQ's",
-"type":"Admin"},
-
-{"id":8,
-"firstName":"pharetra",
-"lastName":"sollicitudin",
-"email":"lstayte7@newyorker.com",
-"password":"iR8\"s'C0+}",
-"type":"Customer"},
-
-{"id":9,
-"firstName":"id",
-"lastName":"erat",
-"email":"wsylett8@chron.com",
-"password":"cT6\\m}(|eC$8>J|N",
-"type":"Admin"},
-
-{"id":10,
-"firstName":"ipsum",
-"lastName":"sapien",
-"email":"jsizey9@shareasale.com",
-"password":"kK6(&+NP!{\"9",
-"type":"Admin"}]
+[
+  {
+    "id": 1,
+    "firstName": "Manuel",
+    "lastName": "Belgrano",
+    "email": "mbelgrano@argentina.com",
+    "password": "$2a$10$clavesecretaClGvZk0TVGFuy6uj6BeTq0zSNOvGl0/QcUpikdd6D1j2F",
+    "type": "Admin",
+    "image": "manuel_belgrano.jpg"
+  },
+  {
+    "id": 2,
+    "firstName": "José de San",
+    "lastName": "Martín",
+    "email": "jdesanmartin@argentina.com",
+    "password": "$2a$10$clavesecretaRkv6i9ThDgJxDRPPNdoNRk9okxqymB99MpyvRAs",
+    "type": "Customer",
+    "image": "jose_de_san_martin.jpg"
+  },
+  {
+    "id": 3,
+    "firstName": "Mariano",
+    "lastName": "Moreno",
+    "email": "mmoreno@argentina.com",
+    "password": "$2a$10$clavesecreta/JI8EobR3/NlL0oedF7/NxXjSsKdS6zr6AohmEhM",
+    "type": "Customer",
+    "image": "mariano_moreno.jpg"
+  },
+  {
+    "id": 4,
+    "firstName": "Juan José",
+    "lastName": "Castelli",
+    "email": "jjcastelli@argentina.com",
+    "password": "$2a$10$clavesecretaWQwKZZW0qdxp/9e80LJizhkyIfsBvHv2eKuBG5N",
+    "type": "Admin",
+    "image": "juan_jose_castelli.jpg"
+  },
+  {
+    "id": 5,
+    "firstName": "Manuel",
+    "lastName": "Dorrego",
+    "email": "mdorrego@argentina.com",
+    "password": "$2a$10$clavesecretaU5YufOW9AkvELBeIz0xU1p/iuH5yUEnxKFnYfC",
+    "type": "Customer",
+    "image": "manuel_dorrego.jpg"
+  },
+  {
+    "id": 6,
+    "firstName": "Juan",
+    "lastName": "Lavalle",
+    "email": "jlavalle@argentina.com",
+    "password": "$2a$10$clavesecretaUfU/YHo9bJWg8RDK7/hNFn/0AzjE5fZNh7Qn7",
+    "type": "Admin",
+    "image": "juan_lavalle.jpg"
+  },
+  {
+    "id": 7,
+    "firstName": "Cornelio",
+    "lastName": "Saaavedra",
+    "email": "csaaavedra@argentina.com",
+    "password": "$2a$10$clavesecreta/NhiN6UMFln8Z0qlxyAFRyJszLxNwqlZycEQJF9E",
+    "type": "Admin",
+    "image": "cornelio_saaavedra.jpg"
+  },
+  {
+    "id": 8,
+    "firstName": "Juan Martín",
+    "lastName": "de Pueyrredón",
+    "email": "jmpueyrredon@argentina.com",
+    "password": "$2a$10$clavesecreta.JIDw8BBEqzjgrS6P.CP8lCHLMI93bSiY7FfGf1S",
+    "type": "Customer",
+    "image": "juan_martin_de_pueyrredon.jpg"
+  },
+  {
+    "id": 9,
+    "firstName": "Domingo",
+    "lastName": "Sarmiento",
+    "email": "dsarmiento@argentina.com",
+    "password": "$2a$10$clavesecreta9b2n1zBMLs0q.GUJYYjtFf0adA.1s3M0oU0z2A",
+    "type": "Admin",
+    "image": "domingo_sarmiento.jpg"
+  },
+  {
+    "id": 10,
+    "firstName": "Juan",
+    "lastName": "Bautista Alberdi",
+    "email": "jbalberdi@argentina.com",
+    "password": "$2a$10$clavesecretaKjShqKsnvfX1.cDWwOv4z/98tkik9GzK4MDS1i8",
+    "type": "Admin",
+    "image": "juan_bautista_alberdi.jpg"
+  },
+  {
+    "id": 11,
+    "firstName": "fernando",
+    "lastName": "benavidez",
+    "email": "benavidez@example.com",
+    "password": "$2b$10$OzHjfzwGmvkfuaSsftv9xu33gNUm/70WdTMgCMBOHlDf8rVcf.AMm",
+    "type": "customer",
+    "image": "../../public/img/users/1695802833389.jpg"
+  }
+]

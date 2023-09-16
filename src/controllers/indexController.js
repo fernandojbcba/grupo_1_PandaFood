@@ -12,24 +12,25 @@ function writeFileJSON(data){
 
 const productController = {
   login: (req, res) => {
-    res.render("./users/login");
+    res.render("./users/login", { user: req.session.user });
   },
   registro: (req, res) => {
-    res.render("./users/registro");
+    res.render("./users/registro", { user: req.session.user });
   },
   cart: (req,res)=>{
-    res.render('./products/cart')
+    res.render('./products/cart', { user: req.session.user })
   },
   home: (req, res) => {
     let menuFiltrado = products.filter((menu) => menu.borrado == false);
-    res.render("home", { menu: menuFiltrado });
+    const user= req.session.user 
+    res.render("home", { menu: menuFiltrado, user });
   },
   detalle: (req, res) => {
     let menuEncontrado = products.find((menu) => menu.id == req.params.id);
-    res.render("./products/detalleProducto", { menu: menuEncontrado });
+    res.render("./products/detalleProducto", { menu: menuEncontrado ,   user: req.session.user });
   },
   create: (req, res) => {
-    res.render('./products/creacion')
+    res.render('./products/creacion', { user: req.session.user })
   },
   createProcess: (req, res) => {
     let newMenu = {
@@ -51,7 +52,7 @@ const productController = {
   edit: (req, res) => {
     let menuEncontrado = products.find((menu) => menu.id == req.params.id);
 
-    res.render('./products/edicion', { menu: menuEncontrado  });
+    res.render('./products/edicion', { menu: menuEncontrado ,  user: req.session.user  });
   },
   update: (req, res) => {
     //obtendo el producto

@@ -1,10 +1,24 @@
 const express = require('express');
+const methodOverride = require("method-override");
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+const { checkRememberedUser } = require('./middlewares/indexMiddkewares');
 const app = express();
 const path = require('path');
-const methodOverride = require("method-override");
 
-//const mainRouter =require ('./routes')
+app.use(cookieParser());
+app.use(checkRememberedUser);
+app.use(
+  session({
+    secret: 'claveSecretaProximamenteENV',
+    resave: true,
+    saveUninitialized: true
+  })
+);
+
+
 const Router = require('./routes/indexRouter');
+const UserRoute = require('./routes/userRouter');
 
 const publicPath = path.join(__dirname, '../public'); //Hacer publicos los archivos de la carpeta public
 app.use(express.static(publicPath));
@@ -22,4 +36,5 @@ app.listen(process.env.PORT || 3010, function() {
 
 
 app.use('/', Router);
+app.use('/users', UserRoute)
 

@@ -6,6 +6,14 @@
       aria-label="Panda Food, Click to go home."
     ></a>
   </div>
+  <div class="user-info">
+    <% if (user) { %>
+      <span>Bienvenido, <%= user.firstName %> <%= user.lastName %></span>
+      <a href="/users/logout">Cerrar sesión</a>
+    <% } else { %>
+      <a href="/login">Iniciar sesión</a>
+    <% } %>
+  </div>
   <input type="checkbox" class="menu-m" id="menu-m">
   <label for="menu-m" class="menu-icon"></label>
   <div class="header_nav">
