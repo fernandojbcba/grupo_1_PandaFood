@@ -22,5 +22,24 @@ const checkRememberedUser = (req, res, next) => {
     res.status(500).json({ message: 'Internal Server Error' });
   }
 };
+
+
+const checkAuthenticated = (req, res, next) => {
+  if (req.session.user) {
+    next();
+  } else {
+    res.redirect('/login');
+  }
+};
+
+const checkNotAuthenticated = (req, res, next) => {
+  if (!req.session.user) {
+   next();
+  } else {
+    res.redirect('/registro'); 
+  }
+};
+
+module.exports = {checkRememberedUser, checkAuthenticated, checkNotAuthenticated };
+
   
-  module.exports = { checkRememberedUser };
