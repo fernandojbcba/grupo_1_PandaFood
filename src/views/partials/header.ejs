@@ -7,10 +7,10 @@
     ></a>
   </div>
   <div class="user-info">
-    <% if (user) { %>
+    <% if (user ) { %>
       <span>Bienvenido, <%= user.firstName %> <%= user.lastName %></span>
       <a href="/users/logout">Cerrar sesión</a>
-    <% } else { %>
+    <% }else { %>
       <a href="/login">Iniciar sesión</a>
     <% } %>
   </div>
