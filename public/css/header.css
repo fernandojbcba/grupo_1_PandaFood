@@ -171,3 +171,21 @@ background: #000;
   }
  
 }
+
+
+.user-info a[href="/login"],
+.user-info a[href="/users/logout"] {
+  color: #fff; 
+  font-weight: 700; 
+  text-decoration: none; 
+  margin-right: 10px; 
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  transition: color 0.3s ease; 
+}
+
+
+.user-info a[href="/login"]:hover,
+.user-info a[href="/users/logout"]:hover {
+  color: #1f1404; 
+}
+

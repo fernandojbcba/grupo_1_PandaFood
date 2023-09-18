@@ -2,7 +2,7 @@ const express = require('express');
 const methodOverride = require("method-override");
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-const { checkRememberedUser } = require('./middlewares/indexMiddkewares');
+const { checkRememberedUser } = require('./middlewares/indexMiddleware');
 const app = express();
 const path = require('path');
 

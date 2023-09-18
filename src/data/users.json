@@ -97,5 +97,14 @@
     "password": "$2b$10$OzHjfzwGmvkfuaSsftv9xu33gNUm/70WdTMgCMBOHlDf8rVcf.AMm",
     "type": "customer",
     "image": "../../public/img/users/1695802833389.jpg"
+  },
+  {
+    "id": 12,
+    "firstName": "Guadalupe",
+    "lastName": "Paez",
+    "email": "guada@gmail.com",
+    "password": "$2b$10$bOjpPGSrMQmYMHKEwpRJqeOhj.I1p3O.qLCb3HsyP6kAkVfeQrOdy",
+    "type": "customer",
+    "image": null
   }
 ]

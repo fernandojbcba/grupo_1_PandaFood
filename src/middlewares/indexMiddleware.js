@@ -42,4 +42,4 @@ const checkNotAuthenticated = (req, res, next) => {
 
 module.exports = {checkRememberedUser, checkAuthenticated, checkNotAuthenticated };
 
-  
+
