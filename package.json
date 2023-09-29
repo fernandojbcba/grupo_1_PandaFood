@@ -2,7 +2,7 @@
   "name": "grupo_1_pandafood",
   "version": "1.0.0",
   "description": "web de comida china",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "nodemon ./src/app.js",
     "start": "node ./src/app.js"
