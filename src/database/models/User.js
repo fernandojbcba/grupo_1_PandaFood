@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const config = require('./config'); 
+const config = require('../config/config'); 
 
 const sequelize = new Sequelize(
   config.development.database,
@@ -34,9 +34,9 @@ const User = sequelize.define('user', {
     type: DataTypes.STRING,
     allowNull: false
   },
-  role: {
+  role_id: {
     type: DataTypes.BIGINT.UNSIGNED,
-    allowNull: false
+    allowNull: false,
   },
   image: {
     type: DataTypes.STRING,
@@ -56,11 +56,12 @@ const User = sequelize.define('user', {
   }
 },{
   tableName :'user',
+  paranoid: true 
 }
 );
 
 
 
 
-User.belongsTo(Role, { foreignKey: 'role', as: 'userRole' });
+User.belongsTo(Role, { foreignKey: 'role_id', as: 'userRole' });
 module.exports = User;

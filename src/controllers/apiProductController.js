@@ -1,4 +1,6 @@
-const { Product } = require('../models');
+const  Product  = require('../database/models/Product');
+const Category = require('../database/models/Category');
+const { Op } = require('sequelize');
 
 const createProduct = async (req, res) => {
   try {
@@ -11,9 +13,17 @@ const createProduct = async (req, res) => {
 
 const getAllProducts = async (req, res) => {
   try {
-    const products = await Product.findAll();
+    const products = await Product.findAll({include: [
+      {
+        model: Category,
+        as: 'category',
+        attributes: ['name']
+      }
+    ]});
     res.json(products);
   } catch (error) {
+    console.log(error);
+    
     res.status(500).json({ error: error.message });
   }
 };
@@ -21,7 +31,13 @@ const getAllProducts = async (req, res) => {
 const getProductById = async (req, res) => {
   const { id } = req.params;
   try {
-    const product = await Product.findByPk(id);
+    const product = await Product.findByPk(id, {include: [
+      {
+        model: Category,
+        as: 'category',
+        attributes: ['name']
+      }
+    ]});
     if (product) {
       res.json(product);
     } else {

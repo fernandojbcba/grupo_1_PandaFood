@@ -1,5 +1,5 @@
-const { User } = require('../models');
-
+const  User  = require('../database/models/User');
+const Role = require('../database/models/Role');
 const createUser = async (req, res) => {
   try {
     const user = await User.create(req.body);
@@ -12,7 +12,15 @@ const createUser = async (req, res) => {
 const getUserById = async (req, res) => {
   const { id } = req.params;
   try {
-    const user = await User.findByPk(id);
+    const user = await User.findByPk(id, {
+      include: [
+        {
+          model: Role,
+          as: 'userRole',
+          attributes: ['name'] 
+        }
+      ]
+    });
     if (user) {
       res.json(user);
     } else {

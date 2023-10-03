@@ -1,5 +1,5 @@
-create schema pandafood;
-use pandafood;
+
+use pandafood_db;
 CREATE TABLE `invoice`(
     `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `user_id` BIGINT UNSIGNED NOT NULL,
@@ -13,7 +13,7 @@ CREATE TABLE `user`(
    `lastName` VARCHAR(255) NOT NULL,
    `email` VARCHAR(255) NOT NULL,
    `password` VARCHAR(255) NOT NULL,
-   `role` BIGINT UNSIGNED NOT NULL,
+   `role_id` BIGINT UNSIGNED NOT NULL,
    `image` VARCHAR(255) NULL,
    `deletedAt` DATETIME NULL,
    `createdAt` DATETIME NOT NULL,
@@ -48,12 +48,12 @@ CREATE TABLE `product`(
 
 
 ALTER TABLE
-    `invoice` ADD CONSTRAINT `invoice_user_id_foreign` FOREIGN KEY(`user_id`) REFERENCES `user`(`id`);
+    `invoice` ADD CONSTRAINT `invoice_user_id_foreign` FOREIGN KEY(`user_id`) REFERENCES `user`(`id`)ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE
-    `user` ADD CONSTRAINT `user_role_foreign` FOREIGN KEY(`role`) REFERENCES `role`(`id`);
+    `user` ADD CONSTRAINT `user_role_foreign` FOREIGN KEY(`role_id`) REFERENCES `role`(`id`)ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE
-    `product` ADD CONSTRAINT `product_category_id_foreign` FOREIGN KEY(`category_id`) REFERENCES `category`(`id`);
+    `product` ADD CONSTRAINT `product_category_id_foreign` FOREIGN KEY(`category_id`) REFERENCES `category`(`id`)ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE
-    `invoice_detail` ADD CONSTRAINT `invoice_detail_invoice_id_foreign` FOREIGN KEY(`invoice_id`) REFERENCES `invoice`(`id`);
+    `invoice_detail` ADD CONSTRAINT `invoice_detail_invoice_id_foreign` FOREIGN KEY(`invoice_id`) REFERENCES `invoice`(`id`)ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE
-    `invoice_detail` ADD CONSTRAINT `invoice_detail_product_id_foreign` FOREIGN KEY(`product_id`) REFERENCES `product`(`id`);
+    `invoice_detail` ADD CONSTRAINT `invoice_detail_product_id_foreign` FOREIGN KEY(`product_id`) REFERENCES `product`(`id`)ON UPDATE CASCADE ON DELETE CASCADE;
