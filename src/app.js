@@ -19,6 +19,7 @@ app.use(
 
 const Router = require('./routes/indexRouter');
 const UserRoute = require('./routes/userRouter');
+const apiRoutes = require('./routes/apiRoutes')
 
 const publicPath = path.join(__dirname, '../public'); //Hacer publicos los archivos de la carpeta public
 app.use(express.static(publicPath));
@@ -36,5 +37,6 @@ app.listen(process.env.PORT || 3010, function() {
 
 
 app.use('/', Router);
-app.use('/users', UserRoute)
+app.use('/users', UserRoute);
+app.use('/api', apiRoutes);
 
