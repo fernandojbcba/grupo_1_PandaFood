@@ -1,23 +1,31 @@
-const fs = require('fs');
-const path = require('path');
 const bcrypt = require('bcrypt');
+require('dotenv').config();
+const User = require('../database/models/User.js');
+const Role = require('../database/models/Role.js');
+const saltRounds = 10
+const secretHash = process.env.SECRETHASH
 
-const usersFilePath = path.join(__dirname, '../data/users.json');
-const saltRounds = 10;
-const secretHash = 'clavesecreta';
 
 const usersController = {
-  getAllUsers: (req, res) => {
-    const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+  getAllUsers: async (req, res) => {
+    const users = await User.findAll ()
+    
     res.json(users);
   },
 
-  getUserById: (req, res) => {
+  getUserById: async (req, res) => {
     
     const userId = parseInt(req.params.id);
-    const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-    const user = users.find((user) => user.id === userId);
 
+    const user = await User.findByPk(userId, {
+      include: [
+        {
+          model: Role,
+          as: 'userRole',
+          attributes: ['name'] 
+        }
+      ]
+  });
     if (user) {
       res.json(user);
     } else {
@@ -25,91 +33,99 @@ const usersController = {
     }
   },
 
-  createUser: (req, res) => {
-
+  createUser: async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
-    const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-    bcrypt.hash(secretHash + password, saltRounds, (err, hashedPassword) => {
-      if (err) {
-        console.error('Error hashing password:', err);
-        return res.status(500).json({ message: 'Internal Server Error' });
-      }
-
+  
+    try {
+      const hashedPassword = await bcrypt.hash(secretHash + password, saltRounds);
+  
       const newUser = {
-        id: users.length + 1,
         firstName,
         lastName,
         email,
         password: hashedPassword,
-        type: "customer",
+        role_id: 2,
         image: req.file ? `../../public/img/users/${req.file.filename}` : null
       };
-
-      users.push(newUser);
-      fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
-
-      res.json({ message: 'User created successfully', user: newUser });
-    });
+  
+      const user = await User.create(newUser);
+      if (user) {
+        res.render("./users/login", { user: req.session.user })
+      }
+      
+    } catch (error) {
+      console.error('Error creating user:', error);
+      res.status(500).json({ message: 'Internal Server Error' });
+    }   
   },
 
-  updateUser: (req, res) => {
-   
+ updateUser : async (req, res) => {
     const userId = parseInt(req.params.id);
     const { firstName, lastName, email, password, type } = req.body;
-
-    let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-    const userIndex = users.findIndex((user) => user.id === userId);
-
-    if (userIndex !== -1) {
-      const hashedPassword = password ? bcrypt.hashSync(secretHash + password, saltRounds) : users[userIndex].password;
-
-      users[userIndex] = {
-        ...users[userIndex],
-        firstName,
-        lastName,
-        email,
-        password: hashedPassword,
-        type,
-        image: req.file ? `../../public/img/users/${req.file.filename}` : null,
-      };
-
-      fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
-      res.json({ message: 'User updated successfully', user: users[userIndex] });
-    } else {
-      res.status(404).json({ message: 'User not found' });
-    }
-  },
-
-  deleteUser: (req, res) => {
-   
-    const userId = parseInt(req.params.id);
-
-    let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-    const updatedUsers = users.filter((user) => user.id !== userId);
-
-    if (updatedUsers.length < users.length) {
-      fs.writeFileSync(usersFilePath, JSON.stringify(updatedUsers, null, 2));
-      res.json({ message: 'User deleted successfully' });
-    } else {
-      res.status(404).json({ message: 'User not found' });
-    }
-  },
-  loginUser: (req, res) => {
   
-    const { email, password,remember } = req.body;
-    const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-    const user = users.find((user) => user.email === email);
-
-    if (user && bcrypt.compareSync(secretHash + password, user.password)) {
-      if (remember) {
-        res.cookie('rememberedUser', email, { maxAge: 3600000 * 24 * 7 });
+    try {
+      const user = await User.findByPk(userId);
+  
+      if (!user) {
+        return res.status(404).json({ message: 'User not found' });
       }
-      req.session.user = user;
-      res.redirect('/'); 
-    } else {
-      res.redirect('/login'); 
+  
+      const hashedPassword = password ? await bcrypt.hash(secretHash + password, saltRounds) : user.password;
+  
+      // Actualizar los campos del usuario
+      user.firstName = firstName;
+      user.lastName = lastName;
+      user.email = email;
+      user.password = hashedPassword;
+      user.type = type;
+      user.image = req.file ? `../../public/img/users/${req.file.filename}` : null;
+  
+      await user.save(); // Guardar los cambios en la base de datos
+  
+      res.json({ message: 'User updated successfully', user });
+    } catch (error) {
+      console.error('Error updating user:', error);
+      res.status(500).json({ message: 'Internal Server Error' });
+    }
+  },
+  
+
+  deleteUser : async (req, res) => {
+    const userId = parseInt(req.params.id);
+  
+    try {
+      const user = await User.findByPk(userId);
+  
+      if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+  
+      await user.destroy(); // Elimina el usuario de la base de datos
+  
+      res.json({ message: 'User deleted successfully' });
+    } catch (error) {
+      console.error('Error deleting user:', error);
+      res.status(500).json({ message: 'Internal Server Error' });
+    }
+  },
+  loginUser : async (req, res) => {
+    const { email, password, remember } = req.body;
+    console.log(email, password, remember)
+    try {
+      const user = await User.findOne({ where:  {email} });
+      console.log(user)
+      if (user && bcrypt.compareSync(secretHash + password, user.password)) {
+        if (remember) {
+          res.cookie('rememberedUser', email, { maxAge: 3600000 * 24 * 7 });
+        }
+        req.session.user = user;
+        res.redirect('/');
+      } else {
+        res.redirect('/login');
+      }
+    } catch (error) {
+      console.error('Error logging in:', error);
+      res.status(500).json({ message: 'Internal Server Error' });
     }
   },
   logoutUser: (req, res) => {

@@ -8,7 +8,7 @@
             <h1>  Actualizar Menu N° <%= menu.id %> </h1>
             <div>
                 <form action="/admin/edit-process/<%= menu.id %>?_method=PUT" method="post">
-                    <input type="text" name="titulo" placeholder="Titulo" value="<%= menu.title %>">
+                    <input type="text" name="titulo" placeholder="Titulo" value="<%= menu.name %>">
                     <input type="text" name="categoria" placeholder="Categoria" value="<%= menu.category %>">
                     <input type="text" name="descripcion" placeholder="Descripcion" value="<%= menu.description %>">
                     <input type="number" name="precio" placeholder="Precio" value="<%= menu.price %>">

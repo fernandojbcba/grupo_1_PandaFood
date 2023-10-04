@@ -51,14 +51,13 @@ Cuerpo (JSON):
   "lastName": "perez",
   "email": "juan@perez.com",
   "password": "Password1*",
-  "role_id": 2
 }
 
-2. Ver Detalle de un Usuario (GET /users/:id):
+1. Ver Detalle de un Usuario (GET /users/:id):
 Método: GET
 URL: http://localhost:3010/api/users/1 
 
-3. Editar un Usuario (PUT /users/:id):
+1. Editar un Usuario (PUT /users/:id):
 Método: PUT
 URL: http://localhost:3010/api/users/1
 Cuerpo (JSON):
