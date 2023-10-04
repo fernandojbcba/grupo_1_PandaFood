@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include("../partials/head") %>
+
+    <body>
+        <%- include("../partials/header") %>
+            <main>
+                <div class="contenedor-list-products">
+                    <h1>administrador de Menúes</h1>
+<button><a href="/create">Crear</a></button>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                
+                                <th>Nombre</th>
+                                <th>Categoría ID</th>
+                                <th>Descripción</th>
+                                <th>Imagen</th>
+                                <th>Precio</th>
+                                <th>Editar</th>
+                                <th>Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for (let item of menu) { %>
+                                <tr>
+                             
+                                    <td><%= item.name %></td>
+                                    <td><%= item.category_id %></td>
+                                    <td><%= item.description %></td>
+                                    <td><img src="/img/productos/<%= item.image %>" alt="Sin Imagen" width="100"></td>
+                                    <td>$<%= item.price %></td>
+                                    <td><a href="/edit/<%= item.id %>"><button><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                    </td>
+                                    <td><form action="/admin/delete/<%= item.id %>?_method=DELETE" method="POST">
+                                        <button><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                      </form></form>
+                                        
+                                    </td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+
+            <%- include("../partials/footer") %>
+    </body>
+
+</html>

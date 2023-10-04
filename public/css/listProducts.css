@@ -1,0 +1,45 @@
+.contenedor-list-products{
+  
+    margin: 0 auto;
+    padding: 105px 5px 130px 5px;
+    width: 100%;
+    }
+    h1 {
+      text-align: center;
+  }
+  
+  table {
+      width: 80%;
+      border-collapse: collapse;
+      margin: 20px
+  }
+  
+  table, th, td {
+      border: 1px solid black;
+  }
+  
+  th, td {
+      /* padding: 10px; */
+      text-align: center;
+      font-size: 16px;
+  }
+  
+  th {
+      background-color: #f2f2f2;
+  }
+  
+  img {
+      max-width: 100px;
+      height: auto;
+  }
+    
+
+   
+    @media screen and (max-width: 768px) {
+      .contenedor-list-products {
+
+    }
+  
+  }
+
+   

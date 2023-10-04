@@ -1,7 +1,7 @@
-const { log } = require('console');
+
 
 const Product = require('../database/models/Product');
-const category = require('../database/models/Category');
+const Category = require('../database/models/Category');
 
 
 
@@ -21,7 +21,22 @@ const productController = {
       const productDataValues = products.map(product => product.dataValues);
       
       const user = req.session.user;
+      console.log(user)
       res.render('home', { menu: productDataValues, user });
+    } catch (error) {
+      console.error('Error fetching menu:', error);
+      res.status(500).json({ message: 'Internal Server Error' });
+    }
+  },
+  listProducts:
+  async (req, res) => {
+    try {
+      const products = await Product.findAll({ where: { deletedAt:null } });
+      const productDataValues = products.map(product => product.dataValues);
+      
+      const user = req.session.user;
+
+      res.render('./products/listProducts', { menu: productDataValues, user });
     } catch (error) {
       console.error('Error fetching menu:', error);
       res.status(500).json({ message: 'Internal Server Error' });
@@ -49,7 +64,7 @@ const productController = {
   createProcess : async (req, res) => {
     const { name, category_id, description, price } = req.body;
     const image = req.file ? req.file.filename : "menu-predeterminado.jpg";
-  console.log(name, category_id, description, price, image)
+
     try {
       const newMenu = await Product.create({
         name,
@@ -70,7 +85,7 @@ edit : async (req, res) => {
   
     try {
       const products  = await Product.findByPk(productId);
-      console.log(products)
+    
      
       if (!products ) {
         return res.status(404).json({ message: 'Product not found' });
@@ -84,71 +99,61 @@ edit : async (req, res) => {
   },
   update : async (req, res) => {
     const productId = req.params.id;
-    const { name, category_id, descripction, price } = req.body;
-  
+    
     try {
-      const menuEncontrado = await Product.findByPk(productId);
   
-      if (!menuEncontrado) {
-        return res.status(404).json({ message: 'Product not found' });
+      const updated = await Product.update(req.body, {
+        where: { id: productId }
+      });
+      if (updated) {
+        const products = await Product.findAll({include: [
+          {
+            model: Category,
+            as: 'category',
+            attributes: ['name']
+          }
+        ]})
+        const user = req.session.user;
+        const productDataValues = products.map(product => product.dataValues);
+        res.render('./products/listProducts', { menu: productDataValues, user });
+
       }
-  
-      // Actualizar la información del producto
-      menuEncontrado.name = name;
-      menuEncontrado.category_id = category_id;
-      menuEncontrado.description = descripction;
-      menuEncontrado.price = price;
-  
-      // Guardar los cambios en la base de datos
-      await menuEncontrado.save();
-  
-      res.redirect('/');
+     
     } catch (error) {
       console.error('Error updating product:', error);
       res.status(500).json({ message: 'Internal Server Error' });
     }
   },
   destroy : async (req, res) => {
-    const productId = req.params.id;
-  
-    try {
-      const menuEncontrado = await Product.findByPk(productId);
-  
-      if (!menuEncontrado) {
-        return res.status(404).json({ message: 'Product not found' });
-      }
-  
-     
-     
-  
-      // Guardar los cambios en la base de datos
-      await menuEncontrado.save();
-  
-      res.redirect('/');
-    } catch (error) {
-      console.error('Error marking product as deleted:', error);
-      res.status(500).json({ message: 'Internal Server Error' });
-    }
-  },
-  recuperarProcess : async (req, res) => {
-    const productId = req.params.id;
-  
-    try {
-      const menuEncontrado = await Product.findByPk(productId);
-  
-      if (!menuEncontrado) {
-        return res.status(404).json({ message: 'Product not found' });
-      }
+    const { id } = req.params;
 
-  
-      // Guardar los cambios en la base de datos
-      await menuEncontrado.save();
-  
-      res.redirect('/');
+    try {
+      const deleted = await Product.destroy({
+        where: { id: id }
+      });
+     
+      if (deleted) {
+        const products = await Product.findAll({include: [
+          {
+            model: Category,
+            as: 'category',
+            attributes: ['name']
+          }
+        ]})
+        const user = req.session.user;
+        const productDataValues = products.map(product => product.dataValues);
+        res.render('./products/listProducts', { menu: productDataValues, user });
+      } else {
+        res.status(404).json({ message: 'Product not found' });
+      }
     } catch (error) {
-      console.error('Error recovering product:', error);
-      res.status(500).json({ message: 'Internal Server Error' });
+      res.status(500).json({ error: error.message });
     }
   }
+  
+  
+   
+  ,
+  
 }
 module.exports = productController;

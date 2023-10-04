@@ -110,14 +110,15 @@ const usersController = {
   },
   loginUser : async (req, res) => {
     const { email, password, remember } = req.body;
-    console.log(email, password, remember)
+
     try {
       const user = await User.findOne({ where:  {email} });
-      console.log(user)
+
       if (user && bcrypt.compareSync(secretHash + password, user.password)) {
         if (remember) {
           res.cookie('rememberedUser', email, { maxAge: 3600000 * 24 * 7 });
         }
+    
         req.session.user = user;
         res.redirect('/');
       } else {
