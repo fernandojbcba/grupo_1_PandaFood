@@ -17,11 +17,19 @@ const productController = {
   },
   home : async (req, res) => {
     try {
-      const products = await Product.findAll({ where: { deletedAt:null } });
+      const products = await Product.findAll({ where: { deletedAt: null },
+        include: [
+          {
+            model: Category,
+            as: 'category',
+            attributes: ['name']
+          }
+        ]});
+   
       const productDataValues = products.map(product => product.dataValues);
       
       const user = req.session.user;
-      console.log(user)
+    
       res.render('home', { menu: productDataValues, user });
     } catch (error) {
       console.error('Error fetching menu:', error);
@@ -31,7 +39,15 @@ const productController = {
   listProducts:
   async (req, res) => {
     try {
-      const products = await Product.findAll({ where: { deletedAt:null } });
+      const products = await Product.findAll({ where: { deletedAt: null },
+        include: [
+          {
+            model: Category,
+            as: 'category',
+            attributes: ['name']
+          }
+        ]});
+    
       const productDataValues = products.map(product => product.dataValues);
       
       const user = req.session.user;
@@ -46,7 +62,13 @@ const productController = {
     const productId = req.params.id;
   
     try {
-      const menuEncontrado = await Product.findByPk(productId);
+      const menuEncontrado = await Product.findByPk(productId, {include: [
+        {
+          model: Category,
+          as: 'category',
+          attributes: ['name']
+        }
+      ]});
   
       if (!menuEncontrado) {
         return res.status(404).json({ message: 'Product not found' });
@@ -84,7 +106,13 @@ edit : async (req, res) => {
     const productId = req.params.id;
   
     try {
-      const products  = await Product.findByPk(productId);
+      const products  = await Product.findByPk(productId,{include: [
+        {
+          model: Category,
+          as: 'category',
+          attributes: ['name']
+        }
+      ]});
     
      
       if (!products ) {
