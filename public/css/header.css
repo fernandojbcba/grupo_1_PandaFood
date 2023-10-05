@@ -28,13 +28,13 @@
   white-space: nowrap;
   filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.2));
   z-index: 10;
-  background-size: 130px 130px;
+  background-size: 100px 100px;
   position: absolute;
   top: -6px;
   left: 30px;
-  height: 130px;
+  height: 100px;
   overflow: visible;
-  width: 130px;
+  width: 100px;
 }
 
 .search input {
@@ -97,6 +97,7 @@ background: #000;
 }
 
 .menu-icon {
+  display: none;
   width: 30px;
   height: 30px;
   background-color: var(--rojo);
@@ -174,6 +175,9 @@ background: #000;
  .user-info p{
   font-size: 10px;
  }
+ .menu-icon {
+  display: flex;}
+
 }
 
 
