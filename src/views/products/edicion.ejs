@@ -9,7 +9,7 @@
             <div>
                 <form action="/admin/edit-process/<%= menu.id %>?_method=PUT" method="POST">
                     <input type="text" name="name" placeholder="Titulo" value="<%= menu.name %>">
-                    <input type="text" name="category" placeholder="Categoria" value="<%= menu.category %>">
+                    <input type="text" name="category_id" placeholder="Categoria" value="<%= menu.category_id%>">
                     <input type="text" name="description" placeholder="Descripcion" value="<%= menu.description %>">
                     <input type="number" name="price" placeholder="Precio" value="<%= menu.price %>">
                     <button type="submit">Editar</button>

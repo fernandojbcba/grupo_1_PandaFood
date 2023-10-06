@@ -40,3 +40,13 @@ link: https://www.figma.com/file/xx4sPYLzF7czldNqa6Agjo/panda-food?type=design&n
 
 ### trello
 https://trello.com/b/eGf1pB42/pandafood
+
+
+Password:
+administrador:
+admin@admin.com
+Password1*
+
+usuario:
+mbelgrano@argentina.com
+Password1*
