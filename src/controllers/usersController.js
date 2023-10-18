@@ -1,7 +1,8 @@
 const bcrypt = require('bcrypt');
 require('dotenv').config();
-const User = require('../database/models/User.js');
-const Role = require('../database/models/Role.js');
+const db = require('../database/models');
+const { User, Role  } = db; 
+
 const saltRounds = 10
 const secretHash = process.env.SECRETHASH
 

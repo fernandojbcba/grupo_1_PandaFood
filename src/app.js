@@ -38,5 +38,4 @@ app.listen(process.env.PORT || 3010, function() {
 
 app.use('/', Router);
 app.use('/users', UserRoute);
-app.use('/api', apiRoutes);
 

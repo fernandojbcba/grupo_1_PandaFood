@@ -1,30 +1,21 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const config = require('../config/config');
+module.exports = (sequelize, dataType) => {
+  const alias = 'Role';
+  const cols = {
+    id: {
+      type: dataType.BIGINT.UNSIGNED,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    name: {
+      type: dataType.STRING,
+      allowNull: false,
+    },
+  };
+  const config = {
+    tableName: 'role',
+    timestamps: false,
+  };
+  const Role = sequelize.define(alias, cols, config);
 
-const sequelize = new Sequelize(
-  config.development.database,
-  config.development.username,
-  config.development.password,
-  {
-    host: config.development.host,
-    dialect: config.development.dialect
-  }
-);
-
-const Role = sequelize.define('role', {
-  id: {
-    type: DataTypes.BIGINT.UNSIGNED,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  name: {
-    type: DataTypes.STRING,
-    allowNull: false
-  }
-},
-{
-  tableName :'role',
-  timestamps:false,
-});
-
-module.exports = Role;
+  return Role;
+};

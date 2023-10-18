@@ -1,67 +1,64 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const config = require('../config/config'); 
+module.exports= (sequelize, dataType) => {
 
-const sequelize = new Sequelize(
-  config.development.database,
-  config.development.username,
-  config.development.password,
-  {
-    host: config.development.host,
-    dialect: config.development.dialect
-  }
-);
-const Role = require('./Role');
+  const alias = 'User';          
 
-const User = sequelize.define('user', {
+  const cols = {
   id: {
-    type: DataTypes.BIGINT.UNSIGNED,
+    type: dataType.BIGINT.UNSIGNED,
     primaryKey: true,
     autoIncrement: true
   },
   firstName: {
-    type: DataTypes.STRING,
+    type: dataType.STRING,
     allowNull: false
   },
   lastName: {
-    type: DataTypes.STRING,
+    type: dataType.STRING,
     allowNull: false
   },
   email: {
-    type: DataTypes.STRING,
+    type: dataType.STRING,
     allowNull: false
   },
   password: {
-    type: DataTypes.STRING,
+    type: dataType.STRING,
     allowNull: false
   },
   role_id: {
-    type: DataTypes.BIGINT.UNSIGNED,
+    type: dataType.BIGINT.UNSIGNED,
     allowNull: false,
   },
   image: {
-    type: DataTypes.STRING,
+    type: dataType.STRING,
     allowNull: true
   },
   deletedAt: {
-    type: DataTypes.DATE,
+    type: dataType.DATE,
     allowNull: true
   },
   createdAt: {
-    type: DataTypes.DATE,
+    type: dataType.DATE,
     allowNull: false
   },
   updatedAt: {
-    type: DataTypes.DATE,
+    type: dataType.DATE,
     allowNull: false
   }
-},{
+};
+  const config = {
   tableName :'user',
   paranoid: true 
 }
-);
+const User = sequelize.define(alias, cols, config);
+
+    User.associate = function(models){
+        User.belongsTo(models.Role, { foreignKey: 'role_id', as: 'userRole' });
+
+    }    
+    
+    return User;
+
+  }
 
 
 
-
-User.belongsTo(Role, { foreignKey: 'role_id', as: 'userRole' });
-module.exports = User;

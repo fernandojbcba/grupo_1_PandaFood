@@ -1,5 +1,6 @@
-const User = require('../database/models/User');
-const Role = require('../database/models/Role');
+const db = require('../database/models');
+const { User, Role  } = db; 
+
 const bcrypt = require('bcrypt');
 const saltRounds = 10
 const secretHash = process.env.SECRETHASH;

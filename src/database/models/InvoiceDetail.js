@@ -1,45 +1,41 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const config = require('../config/config'); 
+module.exports= (sequelize, dataType) => {
 
-const sequelize = new Sequelize(
-  config.development.database,
-  config.development.username,
-  config.development.password,
-  {
-    host: config.development.host,
-    dialect: config.development.dialect
-  }
-);
-const Product = require('./Product');
-const Invoice = require('./Invoice');
-
-const InvoiceDetail = sequelize.define('invoiceDetail', {
+  const alias =  'InvoiceDetail';
+  const cols = {
   id: {
-    type: DataTypes.BIGINT.UNSIGNED,
+    type: dataType.BIGINT.UNSIGNED,
     primaryKey: true,
     autoIncrement: true
   },
   invoiceId: {
-    type: DataTypes.BIGINT.UNSIGNED,
+    type: dataType.BIGINT.UNSIGNED,
     allowNull: false
   },
   productId: {
-    type: DataTypes.BIGINT.UNSIGNED,
+    type: dataType.BIGINT.UNSIGNED,
     allowNull: false
   },
   quantity: {
-    type: DataTypes.BIGINT,
+    type: dataType.BIGINT,
     allowNull: false
   },
   unitPrice: {
-    type: DataTypes.BIGINT,
+    type: dataType.BIGINT,
     allowNull: false
   }
-},
-{
+};
+const config = {
   tableName :'invoice_detail',
   timestamps:false,
-});
-InvoiceDetail.belongsTo(Invoice, { foreignKey: 'invoice_id', as: 'invoice' });
-InvoiceDetail.belongsTo(Product, { foreignKey: 'product_id', as: 'product' });
-module.exports = InvoiceDetail;
+};
+const InvoiceDetail = sequelize.define(alias, cols, config);
+
+InvoiceDetail.associate = function(models){
+      InvoiceDetail.belongsTo(models.Invoice, { foreignKey: 'invoice_id', as: 'invoice' });
+      InvoiceDetail.belongsTo(models.Product, { foreignKey: 'product_id', as: 'product' });
+
+    }    
+    
+    return InvoiceDetail;
+} 
+

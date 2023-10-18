@@ -1,5 +1,6 @@
-const  Product  = require('../database/models/Product');
-const Category = require('../database/models/Category');
+const db = require('../database/models');
+const { Product, Category } = db; 
+
 const { Op } = require('sequelize');
 
 const createProduct = async (req, res) => {

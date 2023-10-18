@@ -1,7 +1,7 @@
 
+const db = require('../database/models');
 
-const Product = require('../database/models/Product');
-const Category = require('../database/models/Category');
+const { Product, Category } = db; 
 
 
 
@@ -24,7 +24,9 @@ const productController = {
             as: 'category',
             attributes: ['name']
           }
-        ]});
+        ]
+      }
+        );
    
       const productDataValues = products.map(product => product.dataValues);
       
