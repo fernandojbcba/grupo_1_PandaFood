@@ -50,3 +50,13 @@ Password1*
 usuario:
 mbelgrano@argentina.com
 Password1*
+
+archivo .env
+
+DB_PASSWORD= "vitto0712$"
+DB_HOST= "127.0.0.1"
+DB_DATABASE= "pandafood"
+DB_DIALECT = "mysql"
+DB_USERNAME = "root"
+DB_PORT = "3306"
+SECRETHASH="clavesecreta"

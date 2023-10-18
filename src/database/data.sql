@@ -30,18 +30,18 @@ VALUES
 
 INSERT INTO user (firstName, lastName, email, password, role_id, image, deletedAt, createdAt, updatedAt)
 VALUES
-('Manuel', 'Belgrano', 'mbelgrano@argentina.com', '$2a$10$clavesecretaClGvZk0TVGFuy6uj6BeTq0zSNOvGl0/QcUpikdd6D1j2F', 1, 'manuel_belgrano.jpg', NULL, NOW(), NOW()),
-('José de San', 'Martín', 'jdesanmartin@argentina.com', '$2a$10$clavesecretaRkv6i9ThDgJxDRPPNdoNRk9okxqymB99MpyvRAs', 2, 'jose_de_san_martin.jpg', NULL, NOW(), NOW()),
-('Mariano', 'Moreno', 'mmoreno@argentina.com', '$2a$10$clavesecreta/JI8EobR3/NlL0oedF7/NxXjSsKdS6zr6AohmEhM', 2, 'mariano_moreno.jpg', NULL, NOW(), NOW()),
-('Juan José', 'Castelli', 'jjcastelli@argentina.com', '$2a$10$clavesecretaWQwKZZW0qdxp/9e80LJizhkyIfsBvHv2eKuBG5N', 1, 'juan_jose_castelli.jpg', NULL, NOW(), NOW()),
-('Manuel', 'Dorrego', 'mdorrego@argentina.com', '$2a$10$clavesecretaU5YufOW9AkvELBeIz0xU1p/iuH5yUEnxKFnYfC', 2, 'manuel_dorrego.jpg', NULL,  NOW(), NOW()),
-('Juan', 'Lavalle', 'jlavalle@argentina.com', '$2a$10$clavesecretaUfU/YHo9bJWg8RDK7/hNFn/0AzjE5fZNh7Qn7', 1, 'juan_lavalle.jpg', NULL, NOW(), NOW()),
-('Cornelio', 'Saaavedra', 'csaaavedra@argentina.com', '$2a$10$clavesecreta/NhiN6UMFln8Z0qlxyAFRyJszLxNwqlZycEQJF9E', 1, 'cornelio_saaavedra.jpg', NULL, NOW(), NOW()),
-('Juan Martín', 'de Pueyrredón', 'jmpueyrredon@argentina.com', '$2a$10$clavesecreta.JIDw8BBEqzjgrS6P.CP8lCHLMI93bSiY7FfGf1S', 2, 'juan_martin_de_pueyrredon.jpg', NULL, NOW(), NOW()),
-('Domingo', 'Sarmiento', 'dsarmiento@argentina.com', '$2a$10$clavesecreta9b2n1zBMLs0q.GUJYYjtFf0adA.1s3M0oU0z2A', 1, 'domingo_sarmiento.jpg', NULL, NOW(), NOW()),
-('Juan', 'Bautista Alberdi', 'jbalberdi@argentina.com', '$2a$10$clavesecretaKjShqKsnvfX1.cDWwOv4z/98tkik9GzK4MDS1i8', 1, 'juan_bautista_alberdi.jpg', NULL, NOW(), NOW()),
-('fernando', 'benavidez', 'benavidez@example.com', '$2b$10$OzHjfzwGmvkfuaSsftv9xu33gNUm/70WdTMgCMBOHlDf8rVcf.AMm', 2, '../../public/img/users/1695802833389.jpg', NULL, NOW(), NOW()),
-('Guadalupe', 'Paez', 'guada@gmail.com', '$2b$10$bOjpPGSrMQmYMHKEwpRJqeOhj.I1p3O.qLCb3HsyP6kAkVfeQrOdy', 2, NULL, NULL, NOW(), NOW());
+('Manuel', 'Belgrano', 'mbelgrano@argentina.com', '$2b$10$WKNvDkGydM3qB9bqn1DCye6iMvGy8AKYJ3KXB6f5mkvB3sgnQuXIW', 1, 'manuel_belgrano.jpg', NULL, NOW(), NOW()),
+('José de San', 'Martín', 'jdesanmartin@argentina.com', '$2b$10$WKNvDkGydM3qB9bqn1DCye6iMvGy8AKYJ3KXB6f5mkvB3sgnQuXIW', 2, 'jose_de_san_martin.jpg', NULL, NOW(), NOW()),
+('Mariano', 'Moreno', 'mmoreno@argentina.com', '$2b$10$WKNvDkGydM3qB9bqn1DCye6iMvGy8AKYJ3KXB6f5mkvB3sgnQuXIW', 2, 'mariano_moreno.jpg', NULL, NOW(), NOW()),
+('Juan José', 'Castelli', 'jjcastelli@argentina.com', '$2b$10$WKNvDkGydM3qB9bqn1DCye6iMvGy8AKYJ3KXB6f5mkvB3sgnQuXIW', 1, 'juan_jose_castelli.jpg', NULL, NOW(), NOW()),
+('Manuel', 'Dorrego', 'mdorrego@argentina.com', '$2b$10$WKNvDkGydM3qB9bqn1DCye6iMvGy8AKYJ3KXB6f5mkvB3sgnQuXIW', 2, 'manuel_dorrego.jpg', NULL,  NOW(), NOW()),
+('Juan', 'Lavalle', 'jlavalle@argentina.com', '$2b$10$WKNvDkGydM3qB9bqn1DCye6iMvGy8AKYJ3KXB6f5mkvB3sgnQuXIW', 1, 'juan_lavalle.jpg', NULL, NOW(), NOW()),
+('Cornelio', 'Saaavedra', 'csaaavedra@argentina.com', '$2b$10$WKNvDkGydM3qB9bqn1DCye6iMvGy8AKYJ3KXB6f5mkvB3sgnQuXIW', 1, 'cornelio_saaavedra.jpg', NULL, NOW(), NOW()),
+('Juan Martín', 'de Pueyrredón', 'jmpueyrredon@argentina.com', '$2b$10$WKNvDkGydM3qB9bqn1DCye6iMvGy8AKYJ3KXB6f5mkvB3sgnQuXIW', 2, 'juan_martin_de_pueyrredon.jpg', NULL, NOW(), NOW()),
+('Domingo', 'Sarmiento', 'dsarmiento@argentina.com', '$2b$10$WKNvDkGydM3qB9bqn1DCye6iMvGy8AKYJ3KXB6f5mkvB3sgnQuXIW', 1, 'domingo_sarmiento.jpg', NULL, NOW(), NOW()),
+('Admin', 'Admin', 'admin@admin.com', '$2b$10$WKNvDkGydM3qB9bqn1DCye6iMvGy8AKYJ3KXB6f5mkvB3sgnQuXIW', 1, 'juan_bautista_alberdi.jpg', NULL, NOW(), NOW()),
+('fernando', 'benavidez', 'benavidez@example.com', '$2b$10$WKNvDkGydM3qB9bqn1DCye6iMvGy8AKYJ3KXB6f5mkvB3sgnQuXIW', 2, '../../public/img/users/1695802833389.jpg', NULL, NOW(), NOW()),
+('Guadalupe', 'Paez', 'guada@gmail.com', '$2b$10$WKNvDkGydM3qB9bqn1DCye6iMvGy8AKYJ3KXB6f5mkvB3sgnQuXIW', 2, NULL, NULL, NOW(), NOW());
 
 
 INSERT INTO invoice (user_id, date, total_amount)
