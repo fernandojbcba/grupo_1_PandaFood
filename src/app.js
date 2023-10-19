@@ -6,6 +6,7 @@ const { checkRememberedUser } = require('./middlewares/indexMiddleware');
 const app = express();
 const path = require('path');
 
+
 app.use(cookieParser());
 app.use(checkRememberedUser);
 app.use(

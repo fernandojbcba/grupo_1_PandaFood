@@ -52,11 +52,21 @@ mbelgrano@argentina.com
 Password1*
 
 archivo .env
+#local host
+#DB_PASSWORD= "vitto0712$"
+#DB_HOST= "127.0.0.1"
+#DB_DATABASE= "pandafood"
+#DB_DIALECT = "mysql"
+#DB_USERNAME = "root"
+#DB_PORT = "3306"
+#SECRETHASH="clavesecreta"
 
-DB_PASSWORD= "vitto0712$"
-DB_HOST= "127.0.0.1"
-DB_DATABASE= "pandafood"
-DB_DIALECT = "mysql"
-DB_USERNAME = "root"
-DB_PORT = "3306"
+#clever
+
+DB_HOST=beetoqgivltczivzeuql-mysql.services.clever-cloud.com
+DB_DATABASE=beetoqgivltczivzeuql
+DB_USERNAME=utk5pmk7wumkclte
+DB_PORT=3306
+DB_PASSWORD=yNhw1QXefMAQYujMgL4I
+DB_DIALECT = mysql
 SECRETHASH="clavesecreta"
