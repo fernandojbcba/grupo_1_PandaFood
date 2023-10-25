@@ -10,7 +10,7 @@ const secretHash = process.env.SECRETHASH
 const usersController = {
   getAllUsers: async (req, res) => {
     const users = await User.findAll ()
-    
+ 
     res.json(users);
   },
 
@@ -46,7 +46,7 @@ const usersController = {
         email,
         password: hashedPassword,
         role_id: 2,
-        image: req.file ? `../../public/img/users/${req.file.filename}` : null
+        image: req.file ? `${req.file.filename}` : "userPredeterminado.png"
       };
   
       const user = await User.create(newUser);
@@ -59,10 +59,39 @@ const usersController = {
       res.status(500).json({ message: 'Internal Server Error' });
     }   
   },
-
+  AdmincreateUser: async (req, res) => {
+    const { firstName, lastName, email, password } = req.body;
+  
+    try {
+      const hashedPassword = await bcrypt.hash(secretHash + password, saltRounds);
+  
+      const newUser = {
+        firstName,
+        lastName,
+        email,
+        password: hashedPassword,
+        role_id: 2,
+        image: req.file ? `${req.file.filename}` : "userPredeterminado.png"
+      };
+  
+      const user = await User.create(newUser);
+      if (user) {
+       
+        const users = await User.findAll();
+        res.render("./users/listuser", { user: req.session.user, users: users  });
+      }
+      
+    } catch (error) {
+      console.error('Error creating user:', error);
+      res.status(500).json({ message: 'Internal Server Error' });
+    }   
+  },
  updateUser : async (req, res) => {
     const userId = parseInt(req.params.id);
-    const { firstName, lastName, email, password, type } = req.body;
+
+
+   
+    const { firstName, lastName, email, password, type} = req.body;
   
     try {
       const user = await User.findByPk(userId);
@@ -72,18 +101,26 @@ const usersController = {
       }
   
       const hashedPassword = password ? await bcrypt.hash(secretHash + password, saltRounds) : user.password;
+      
+      const updateUsers={
+        firstName,
+        lastName,
+        email,
+        password: hashedPassword,
+        role_id: 2,
+        image: req.file ? `${req.file.filename}` : "userPredeterminado.png"
+      };
+      
+      
+   
   
-      // Actualizar los campos del usuario
-      user.firstName = firstName;
-      user.lastName = lastName;
-      user.email = email;
-      user.password = hashedPassword;
-      user.type = type;
-      user.image = req.file ? `../../public/img/users/${req.file.filename}` : null;
-  
-      await user.save(); // Guardar los cambios en la base de datos
-  
-      res.json({ message: 'User updated successfully', user });
+      const updated = await user.update(updateUsers, {
+        where: { id: userId }
+      });
+      if (updated) {
+       
+      const users = await User.findAll();
+      res.render("./users/listuser", { user: req.session.user, users: users  });}
     } catch (error) {
       console.error('Error updating user:', error);
       res.status(500).json({ message: 'Internal Server Error' });
@@ -92,21 +129,21 @@ const usersController = {
   
 
   deleteUser : async (req, res) => {
-    const userId = parseInt(req.params.id);
-  
+    const { id } = req.params;
+
     try {
-      const user = await User.findByPk(userId);
-  
-      if (!user) {
-        return res.status(404).json({ message: 'User not found' });
+      const deleted = await User.destroy({
+        where: { id: id }
+      });
+     
+      if (deleted) {
+        const users = await User.findAll();
+      res.render("./users/listuser", { user: req.session.user, users: users  });
+      } else {
+        res.status(404).json({ message: 'user not found' });
       }
-  
-      await user.destroy(); // Elimina el usuario de la base de datos
-  
-      res.json({ message: 'User deleted successfully' });
     } catch (error) {
-      console.error('Error deleting user:', error);
-      res.status(500).json({ message: 'Internal Server Error' });
+      res.status(500).json({ error: error.message });
     }
   },
   loginUser : async (req, res) => {
@@ -143,6 +180,33 @@ const usersController = {
       }
     });
   },
-};
+  getUserAdmin: async (req, res) => { 
+    const users = await User.findAll();
+   
+    res.render("./users/listuser", { user: req.session.user, users: users  });
+  
+},
+viewCreateUser: (req, res) => {
+  res.render("./users/createUser", { user: req.session.user, });
+},
+
+viewUserEdit:async  (req, res) => {
+  const userId = parseInt(req.params.id);
+
+    try {
+      const userdata = await User.findByPk(userId);  
+    
+  
+      if (!userdata) {
+        return res.status(404).json({ message: 'user not found' });
+      }
+  
+      res.render('./users/editUser', { userdata: userdata, user: req.session.user });
+    } catch (error) {
+      console.error('Error fetching product details for editing:', error);
+      res.status(500).json({ message: 'Internal Server Error' });
+    }
+  },
+}
 
 module.exports = usersController;
