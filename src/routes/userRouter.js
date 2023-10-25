@@ -29,18 +29,17 @@ router.get('/logout', usersController.logoutUser)
 router.get('/byid/:id', usersController.getUserById);
 router.post('/login', usersController.loginUser);
 router.post('/', upload.single('image'), usersController.createUser);
-router.put('/byid/:id', upload.single('image'), usersController.updateUser);
-router.delete('/byid/:id', usersController.deleteUser);
-
-router.get('/logout', checkNotAuthenticated, usersController.logoutUser);
-router.get('/byid/:id', checkNotAuthenticated, usersController.getUserById);
-router.post('/login', checkNotAuthenticated, usersController.loginUser);
-router.post('/', checkNotAuthenticated, upload.single('image'), usersController.createUser);
 
 
 // Rutas accesibles solo con login
-router.put('/byid/:id', checkAuthenticated, upload.single('image'), usersController.updateUser);
-router.delete('/byid/:id', checkAuthenticated, usersController.deleteUser);
+
+router.put('/editbyid/:id', checkAuthenticated, upload.single('image'), usersController.updateUser);
+router.delete('/deletebyid/:id', checkAuthenticated, usersController.deleteUser);
+router.get('/useradmin', checkAuthenticated, usersController.getUserAdmin);
+router.post('/crateuser', upload.single('image'), usersController.AdmincreateUser);
+
+router.get('/viewCreateUser', checkAuthenticated, usersController.viewCreateUser);
+router.get('/viewEditUser/:id', checkAuthenticated, usersController.viewUserEdit);
 
 
 module.exports = router;

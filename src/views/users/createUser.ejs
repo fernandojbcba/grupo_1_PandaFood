@@ -6,9 +6,8 @@
     <main>
       <div class="contenedor-registro">
         <div class="container-r">
-          <h2>Registro</h2>
-         
-          <form action="/users/" method="post" enctype="multipart/form-data">
+          <h2>Crear Nuevo Usuario</h2>
+          <form action="/users/crateuser" method="post" enctype="multipart/form-data">
             <label for="firstName">Nombre:</label>
             <input type="text" id="firstName" name="firstName" placeholder="Nombre" required>
             
@@ -21,27 +20,13 @@
             <label for="password">Contraseña:</label>
             <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
           
-            <div class="recordar-contraseña">
-              <input type="checkbox" id="recordar" name="recordar">
-              <label for="recordar">Recordar contraseña</label>
-            </div>
-          
             <label for="image">Imagen de perfil:</label>
             <input type="file" id="image" name="image">
           
-            <button type="submit">Registrarse</button>
+            <button type="submit">Crear</button>
           </form>
-          
-          <div class="olvidaste-contraseña">
-            <a href="#">¿Olvidaste tu contraseña?</a>
-          </div>
-          
-          <div class="signup">
-            <p>¿Ya tienes cuenta? <a href="/login">Ingresar</a></p>
-          </div>
         </div>
       </div>
-      
     </main>
     
     <%- include("../partials/footer") %>

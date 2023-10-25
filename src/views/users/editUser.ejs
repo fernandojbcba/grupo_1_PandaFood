@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include("../partials/head") %>
+  <body>
+    <%- include("../partials/header") %>
+    <main>
+      <div class="contenedor-edicion-usuario">
+        <h1>Actualizar Usuario N° <%= userdata.id %></h1>
+        <div>
+          <form action="/users/editbyid/<%= userdata.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <label for="firstName">Nombre:</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Nombre" value="<%= userdata.firstName %>" required>
+            
+            <label for="lastName">Apellido:</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Apellido" value="<%= userdata.lastName %>" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="ejemplo@email.com" value="<%= userdata.email %>" required>
+          
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
+          
+            <label for="image">Imagen de perfil:</label>
+            <input type="file" id="image" name="image">
+          
+            <button type="submit">Editar</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <%- include("../partials/footer") %>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/32e1b61c65.js"
+    crossorigin="anonymous"
+  ></script>
+</html>

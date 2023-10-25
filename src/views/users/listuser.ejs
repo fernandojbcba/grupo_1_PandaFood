@@ -5,37 +5,37 @@
   <body>
     <%- include("../partials/header") %>
     <main>
-      <div class="contenedor-list-products">
-        <h1>administrador de Menus</h1>
-        <button class="button-crear"><a href="/create">Crear Menu</a></button>
+      <div class="contenedor-list-users">
+        <h1>Administrador de Usuarios</h1>
+        <button class="button-crear">
+          <a href="/users/viewCreateUser">Crear Usuario</a>
+        </button>
         <table border="1">
           <thead>
             <tr>
               <th>Nombre</th>
-              <th>Categoría ID</th>
-              <th>Descripción</th>
-              <th>Imagen</th>
-              <th>Precio</th>
+              <th>Apellido</th>
+              <th>Email</th>
+              <th>Imagen de Perfil</th>
               <th>Editar</th>
               <th>Eliminar</th>
             </tr>
           </thead>
           <tbody>
-            <% for (let item of menu) { %>
+            <% for (let user of users) { %>
             <tr>
-              <td><%= item.name %></td>
-              <td><%= item.category_id %></td>
-              <td><%= item.description %></td>
+              <td><%= user.firstName %></td>
+              <td><%= user.lastName %></td>
+              <td><%= user.email %></td>
               <td>
                 <img
-                  src="/img/productos/<%= item.image %>"
+                  src="/img/users/<%= user.image %>"
                   alt="Sin Imagen"
                   width="100"
                 />
               </td>
-              <td>$<%= item.price %></td>
               <td>
-                <a href="/edit/<%= item.id %>"
+                <a href="/users/viewEditUser/<%= user.id %>"
                   ><button>
                     <i
                       class="fa fa-pencil-square-o"
@@ -45,7 +45,7 @@
               </td>
               <td>
                 <form
-                  action="/admin/delete/<%= item.id %>?_method=DELETE"
+                  action="/users/deletebyid/<%= user.id %>?_method=DELETE"
                   method="POST"
                 >
                   <button>
