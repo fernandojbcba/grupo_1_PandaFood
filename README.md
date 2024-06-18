@@ -63,10 +63,4 @@ archivo .env
 
 #clever
 
-DB_HOST=beetoqgivltczivzeuql-mysql.services.clever-cloud.com
-DB_DATABASE=beetoqgivltczivzeuql
-DB_USERNAME=utk5pmk7wumkclte
-DB_PORT=3306
-DB_PASSWORD=yNhw1QXefMAQYujMgL4I
-DB_DIALECT = mysql
-SECRETHASH="clavesecreta"
+
